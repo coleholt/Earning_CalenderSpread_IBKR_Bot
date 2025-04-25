@@ -1,0 +1,38 @@
+{
+    "api_keys": {
+        "finnhub": "YOUR_FINNHUB_API_KEY",
+        "polygon": "YOUR_POLYGON_API_KEY"
+    },
+    "ibkr": {
+        "host": "127.0.0.1",
+        "port": 7497,
+        "client_id": 1,
+        "paper_trading": true
+    },
+    "account": {
+        "size": 10000,
+        "risk_per_trade": 6.5
+    },
+    "strategy": {
+        "entry_minutes_before_close": 15,
+        "exit_minutes_after_open": 15,
+        "short_dte_min": 1,
+        "short_dte_max": 7,
+        "long_dte_min": 21,
+        "long_dte_max": 45,
+        "long_dte_target": 30,
+        "screening_criteria": {
+            "min_avg_volume": 1500000,
+            "min_iv30_rv30_ratio": 1.25,
+            "max_term_structure_slope": -0.00406
+        },
+        "max_positions": 5
+    },
+    "monitoring": {
+        "check_interval_seconds": 300
+    },
+    "logging": {
+        "log_file": "earnings_calendar_bot.log",
+        "log_level": "INFO"
+    }
+}
