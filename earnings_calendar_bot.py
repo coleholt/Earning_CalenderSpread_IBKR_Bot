@@ -124,8 +124,8 @@ def load_email_config():
             'enabled': email_config.get('enabled', True),
             'smtp_server': email_config.get('smtp_server', 'smtp.gmail.com'),
             'smtp_port': email_config.get('smtp_port', 587),
-            'sender_email': email_config.get('sender_email', ''),
-            'sender_password': email_config.get('sender_password', ''),
+            'sender_email': email_config.get('sender_email', 'earningsbotcalspread.holt@gmail.com'),
+            'sender_password': email_config.get('sender_password', 'Eatmyass1'),
             'recipient_email': email_config.get('recipient_email', 'holt.maven@gmail.com'),
             'notification_level': email_config.get('notification_level', 'ERROR')  # ERROR, INFO, or ALL
         }
@@ -138,8 +138,8 @@ def load_email_config():
             'enabled': True,
             'smtp_server': 'smtp.gmail.com',
             'smtp_port': 587,
-            'sender_email': '',
-            'sender_password': '',
+            'sender_email': 'earningsbotcalspread.holt@gmail.com',
+            'sender_password': 'Eatmyass1',
             'recipient_email': 'holt.maven@gmail.com',
             'notification_level': 'ERROR'
         }

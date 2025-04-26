@@ -1,6 +1,6 @@
 {
     "api_keys": {
-        "finnhub": "d03eck9r01qvvb93ujr0d03eck9r01qvvb93ujrg",
+        "finnhub": "YOUR_FINNHUB_API_KEY",
         "polygon": "YOUR_POLYGON_API_KEY"
     },
     "ibkr": {
@@ -11,7 +11,8 @@
     },
     "account": {
         "size": 10000,
-        "risk_per_trade": 6.5
+        "risk_per_trade": 6.5,
+        "use_actual_balance": true
     },
     "strategy": {
         "entry_minutes_before_close": 15,
@@ -26,13 +27,26 @@
             "min_iv30_rv30_ratio": 1.25,
             "max_term_structure_slope": -0.00406
         },
-        "max_positions": 5
+        "max_positions": 10
+    },
+    "email": {
+        "enabled": true,
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "sender_email": "earningsbotcalspread.holt@gmail.com",
+        "sender_password": "Eatmyass1",
+        "recipient_email": "holt.maven@gmail.com",
+        "notification_level": "ERROR",
+        "daily_report_time": "20:00"
     },
     "monitoring": {
-        "check_interval_seconds": 300
+        "check_interval_seconds": 300,
+        "watchdog_check_interval_minutes": 10,
+        "auto_restart": true,
+        "update_reminder_frequency_days": 30
     },
     "logging": {
-        "log_file": "earnings_calendar_bot.log",
+        "log_file": "logs/earnings_calendar_bot.log",
         "log_level": "INFO"
     }
 }
