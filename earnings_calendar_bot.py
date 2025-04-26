@@ -110,6 +110,99 @@ def connect_to_ibkr():
         return None
 
 
+# Account size functions
+def get_account_size(ib):
+    """
+    Get the actual account size from IBKR or use the configured fallback value.
+    If account size cannot be determined reliably, return 0 to prevent trading.
+
+    Args:
+        ib: The IB connection object
+
+    Returns:
+        float: The account size (Net Liquidation Value) or 0 if it cannot be determined
+    """
+    if not ib or not ib.isConnected():
+        logger.error("Not connected to IBKR. Cannot get account size. Trading will be prevented.")
+        return 0  # Return 0 to prevent trading
+
+    # Load configuration
+    config = load_config()
+    use_actual_balance = True  # Default to True
+
+    if config and 'account' in config and 'use_actual_balance' in config['account']:
+        use_actual_balance = config['account']['use_actual_balance']
+
+    # If configured to use fallback value, don't query IBKR
+    if not use_actual_balance:
+        logger.info("Using configured account size instead of actual balance")
+        return get_fallback_account_size()
+
+    try:
+        # Get account summary
+        account_summary = ib.accountSummary()
+
+        if not account_summary:
+            logger.error("Empty account summary received from IBKR. Trading will be prevented.")
+            return 0  # Return 0 to prevent trading
+
+        # Find the Net Liquidation Value
+        for item in account_summary:
+            if item.tag == 'NetLiquidation':
+                try:
+                    net_liquidation = float(item.value)
+                    # Check for valid account value
+                    if net_liquidation <= 0:
+                        logger.error(f"Invalid account value: ${net_liquidation:.2f}. Trading will be prevented.")
+                        return 0  # Return 0 to prevent trading
+
+                    logger.info(f"Retrieved actual account value: ${net_liquidation:.2f}")
+                    return net_liquidation
+                except (ValueError, TypeError):
+                    logger.error(
+                        f"Could not convert NetLiquidation value to float: {item.value}. Trading will be prevented.")
+                    return 0  # Return 0 to prevent trading
+
+        # If we get here, we couldn't find Net Liquidation value
+        logger.error("NetLiquidation value not found in account summary. Trading will be prevented.")
+        return 0  # Return 0 to prevent trading
+
+    except Exception as e:
+        logger.error(f"Error getting account size from IBKR: {e}. Trading will be prevented.")
+        return 0  # Return 0 to prevent trading
+
+
+def get_fallback_account_size():
+    """
+    Get the fallback account size from configuration.
+    If the fallback account size cannot be determined reliably, return 0 to prevent trading.
+
+    Returns:
+        float: The configured account size or 0 if it cannot be determined
+    """
+    try:
+        config = load_config()
+        if config and 'account' in config and 'size' in config['account']:
+            account_size = float(config['account']['size'])
+            if account_size <= 0:
+                logger.error(f"Invalid fallback account size: ${account_size:.2f}. Trading will be prevented.")
+                return 0  # Return 0 to prevent trading
+
+            # Check for unrealistically small account sizes
+            if account_size < 100:
+                logger.warning(
+                    f"Unusually small fallback account size: ${account_size:.2f}. Verify your configuration.")
+
+            logger.info(f"Using account size from config: ${account_size:.2f}")
+            return account_size
+        else:
+            logger.error("Account size not configured. Trading will be prevented.")
+            return 0  # Return 0 to prevent trading
+    except Exception as e:
+        logger.error(f"Error getting account size from config: {e}. Trading will be prevented.")
+        return 0  # Return 0 to prevent trading
+
+
 # Email notification settings
 def load_email_config():
     """Load email configuration from config file"""
@@ -1088,15 +1181,22 @@ def process_earnings_symbols(ib, symbols, account_size=10000):
 
     active_trades = []
 
-    # Get account info for risk management
-    account_summary = ib.accountSummary()
-    net_liquidation = next((float(item.value) for item in account_summary if item.tag == 'NetLiquidation'),
-                           account_size)
+    # Get account size using the dedicated function
+    net_liquidation = get_account_size(ib)
 
-    logger.info(f"Account value: ${net_liquidation:.2f}")
+    # Safety check: If account size is zero or negative, abort trading
+    if net_liquidation <= 0:
+        logger.error(f"Invalid account size: ${net_liquidation:.2f}. Trading aborted for safety.")
+        send_error_notification(f"Trading aborted: Invalid account size: ${net_liquidation:.2f}")
+        return []
 
-    # Maximum risk per position (% of account)
-    risk_percent = 6.5  # 6.5% per position
+    # Get risk percentage from config
+    config = load_config()
+    risk_percent = 6.5  # Default risk percentage
+    if config and 'account' in config and 'risk_per_trade' in config['account']:
+        risk_percent = config['account']['risk_per_trade']
+
+    logger.info(f"Account value: ${net_liquidation:.2f}, Risk per position: {risk_percent}%")
 
     for symbol in screened_symbols:
         logger.info(f"Processing {symbol} for calendar spread")
