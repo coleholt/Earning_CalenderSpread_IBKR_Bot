@@ -1620,7 +1620,7 @@ def place_calendar_spread_order(ib, calendar_spread, account_size, risk_percent=
 
         # Place the order with limit price slightly above the debit
         # Add small buffer to increase chance of fill
-        limit_price = calendar_spread['debit'] * 1.05
+        limit_price = calendar_spread['debit'] * 1.01
         order = LimitOrder('BUY', contracts_to_trade, limit_price)
 
         # Add order properties for spread orders
