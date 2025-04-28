@@ -1457,51 +1457,30 @@ def setup_entry_schedule():
 def monitor_positions_and_exit(ib, active_trades, next_trading_day):
     """Monitor positions for assignment and exit at the scheduled time"""
     eastern = pytz.timezone('US/Eastern')
+    now = datetime.datetime.now(eastern)
 
     # Set up exit schedule
     seconds_until_exit = setup_exit_schedule(next_trading_day)
+
+    # Calculate the actual exit time
+    market_open_time = datetime.datetime.combine(
+        next_trading_day,
+        datetime.time(9, 30, 0)
+    )
+    market_open_time = eastern.localize(market_open_time)
+    scheduled_exit_time = market_open_time + datetime.timedelta(minutes=20)
+
+    # If we're already past the exit time, exit positions immediately
+    if now > scheduled_exit_time:
+        logger.warning("Current time is past scheduled exit time. Exiting positions immediately.")
+        exit_positions(ib, active_trades)
+        return
 
     # If we're within a buffer of the exit time, just exit now
     if seconds_until_exit < 300:  # Less than 5 minutes
         logger.info("Exit time is very soon, proceeding to exit now")
         exit_positions(ib, active_trades)
         return
-
-    # Otherwise, run a monitoring loop
-    check_interval = 300  # Check every 5 minutes
-    next_check_time = datetime.datetime.now() + datetime.timedelta(seconds=check_interval)
-
-    while True:
-        # Sleep until next check
-        sleep_seconds = (next_check_time - datetime.datetime.now()).total_seconds()
-        if sleep_seconds > 0:
-            time.sleep(sleep_seconds)
-
-        now = datetime.datetime.now(eastern)
-        logger.info(f"Checking positions at {now.strftime('%Y-%m-%d %H:%M:%S ET')}")
-
-        # Check if it's exit time
-        exit_time = datetime.datetime.now(eastern) + datetime.timedelta(seconds=seconds_until_exit)
-        if datetime.datetime.now() >= exit_time:
-            logger.info("Exit time reached")
-            exit_positions(ib, active_trades)
-            break
-
-        # Check for assignment on each position
-        for trade_info in list(active_trades):  # Use a copy of the list for safe iteration
-            if check_for_assignment(ib, trade_info):
-                logger.info(f"Assignment detected for {trade_info['symbol']}, closing position")
-                close_position(ib, trade_info)
-                # Remove from active trades
-                active_trades.remove(trade_info)
-
-        # Update next check time
-        next_check_time = datetime.datetime.now() + datetime.timedelta(seconds=check_interval)
-
-        # If no more active trades, break out of loop
-        if not active_trades:
-            logger.info("No more active trades to monitor")
-            break
 
 
 def exit_positions(ib, active_trades):
@@ -1998,14 +1977,101 @@ def calculate_term_structure(option_data):
     return float(slope)  # Explicitly convert to Python float
 
 
-def main():
-    """Main function to run the earnings calendar bot with error handling and reporting"""
+def check_and_exit_delayed_positions(ib):
+    """
+    Check for any open positions that should have been closed already
+    and exit them immediately at market if reconnecting after exit time
+    """
     try:
-        # Set up watchdog monitoring
-        setup_watchdog()
+        eastern = pytz.timezone('US/Eastern')
+        now = datetime.datetime.now(eastern)
+        market_open_time = now.replace(hour=9, minute=30, second=0, microsecond=0)
 
-        # Schedule daily performance report
-        schedule_daily_report()
+        # Calculate the time 20 minutes after market open
+        scheduled_exit_time = market_open_time + datetime.timedelta(minutes=20)
+
+        # If current time is past scheduled exit time and during market hours, check for positions
+        if now > scheduled_exit_time and now.hour < 16:
+            logger.info("Bot reconnected after scheduled exit time. Checking for positions that need to be closed...")
+
+            # Get active trades from our trade history
+            trade_history = initialize_trade_history_db()
+            open_trades = [t for t in trade_history.get('trades', []) if t.get('status') == 'open']
+
+            if open_trades:
+                logger.warning(
+                    f"Found {len(open_trades)} open positions after scheduled exit time. Closing immediately at market.")
+
+                # Close each position at market
+                for trade_info in open_trades:
+                    logger.info(f"Closing position for {trade_info['symbol']} with market order")
+
+                    # Create a contract for the order
+                    symbol = trade_info['symbol']
+
+                    # For simplicity, let's close the position using the market
+                    contracts = ib.positions()
+                    for contract_position in contracts:
+                        if contract_position.contract.symbol == symbol:
+                            # Create a market order to close the position
+                            quantity = abs(contract_position.position)
+                            action = 'SELL' if contract_position.position > 0 else 'BUY'
+                            market_order = MarketOrder(action, quantity)
+
+                            # Submit the order
+                            trade = ib.placeOrder(contract_position.contract, market_order)
+                            logger.info(f"Emergency market order placed to close {symbol} position")
+
+                            # Wait for the order to be filled
+                            ib.sleep(5)
+
+                            # Update trade history
+                            fills = ib.fills()
+                            for fill in fills:
+                                if fill.execution.orderId == trade.order.orderId:
+                                    exit_price = fill.execution.price
+                                    update_trade_exit(trade_info['order_id'], exit_price)
+                                    break
+
+                # Send notification
+                send_email_alert(
+                    "Emergency Position Exit",
+                    f"Bot reconnected after scheduled exit time and closed {len(open_trades)} positions with market orders."
+                )
+            else:
+                logger.info("No open positions found after reconnection")
+
+    except Exception as e:
+        logger.error(f"Error checking for delayed positions: {e}")
+        traceback_info = traceback.format_exc()
+        logger.error(traceback_info)
+        send_error_notification(f"Error during emergency position exit", traceback_info)
+
+        def main():
+            """Main function to run the earnings calendar bot with error handling and reporting"""
+            try:
+                # Set up watchdog monitoring
+                setup_watchdog()
+
+                # Schedule daily performance report
+                schedule_daily_report()
+
+                # Get today's date in US Eastern time (market timezone)
+                eastern = pytz.timezone('US/Eastern')
+                now = datetime.datetime.now(eastern)
+                today = now.date()
+
+                # Get next trading day for exit planning
+                next_trading_day = get_next_trading_day(today)
+
+                # Connect to IBKR to check for open positions that need closing
+                ib = connect_to_ibkr()
+                # Connect to IBKR
+                if not ib or not ib.isConnected():
+                    ib = connect_to_ibkr()
+
+
+                    # Don't disconnect yet, as we'll need the connection later
 
         # Get today's date in US Eastern time (market timezone)
         eastern = pytz.timezone('US/Eastern')
