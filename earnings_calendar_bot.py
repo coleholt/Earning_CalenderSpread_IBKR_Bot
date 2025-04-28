@@ -1482,6 +1482,42 @@ def monitor_positions_and_exit(ib, active_trades, next_trading_day):
         exit_positions(ib, active_trades)
         return
 
+    # Otherwise, run a monitoring loop
+    check_interval = 300  # Check every 5 minutes
+    next_check_time = datetime.datetime.now() + datetime.timedelta(seconds=check_interval)
+
+    while True:
+        # Sleep until next check
+        sleep_seconds = (next_check_time - datetime.datetime.now()).total_seconds()
+        if sleep_seconds > 0:
+            time.sleep(sleep_seconds)
+
+        now = datetime.datetime.now(eastern)
+        logger.info(f"Checking positions at {now.strftime('%Y-%m-%d %H:%M:%S ET')}")
+
+        # Check if it's exit time
+        exit_time = datetime.datetime.now(eastern) + datetime.timedelta(seconds=seconds_until_exit)
+        if datetime.datetime.now() >= exit_time:
+            logger.info("Exit time reached")
+            exit_positions(ib, active_trades)
+            break
+
+        # Check for assignment on each position
+        for trade_info in list(active_trades):  # Use a copy of the list for safe iteration
+            if check_for_assignment(ib, trade_info):
+                logger.info(f"Assignment detected for {trade_info['symbol']}, closing position")
+                close_position(ib, trade_info)
+                # Remove from active trades
+                active_trades.remove(trade_info)
+
+        # Update next check time
+        next_check_time = datetime.datetime.now() + datetime.timedelta(seconds=check_interval)
+
+        # If no more active trades, break out of loop
+        if not active_trades:
+            logger.info("No more active trades to monitor")
+            break
+
 
 def exit_positions(ib, active_trades):
     """Exit all positions at market open"""
@@ -2047,31 +2083,15 @@ def check_and_exit_delayed_positions(ib):
         logger.error(traceback_info)
         send_error_notification(f"Error during emergency position exit", traceback_info)
 
-        def main():
-            """Main function to run the earnings calendar bot with error handling and reporting"""
-            try:
-                # Set up watchdog monitoring
-                setup_watchdog()
 
-                # Schedule daily performance report
-                schedule_daily_report()
+def main():
+    """Main function to run the earnings calendar bot with error handling and reporting"""
+    try:
+        # Set up watchdog monitoring
+        setup_watchdog()
 
-                # Get today's date in US Eastern time (market timezone)
-                eastern = pytz.timezone('US/Eastern')
-                now = datetime.datetime.now(eastern)
-                today = now.date()
-
-                # Get next trading day for exit planning
-                next_trading_day = get_next_trading_day(today)
-
-                # Connect to IBKR to check for open positions that need closing
-                ib = connect_to_ibkr()
-                # Connect to IBKR
-                if not ib or not ib.isConnected():
-                    ib = connect_to_ibkr()
-
-
-                    # Don't disconnect yet, as we'll need the connection later
+        # Schedule daily performance report
+        schedule_daily_report()
 
         # Get today's date in US Eastern time (market timezone)
         eastern = pytz.timezone('US/Eastern')
@@ -2080,6 +2100,15 @@ def check_and_exit_delayed_positions(ib):
 
         # Get next trading day for exit planning
         next_trading_day = get_next_trading_day(today)
+
+        # Connect to IBKR first to check for any open positions that need closing
+        ib = connect_to_ibkr()
+        if ib and ib.isConnected():
+            # Check and close any positions that should have been closed earlier
+            check_and_exit_delayed_positions(ib)
+        else:
+            logger.warning("Could not connect to IBKR for delayed position check. Will retry later.")
+            ib = None
 
         # Check market status
         market_open = is_market_open()
@@ -2099,6 +2128,11 @@ def check_and_exit_delayed_positions(ib):
                 logger.info("Pre-screening complete")
             else:
                 logger.info("Today is not a trading day. Skipping pre-screening.")
+
+            # Disconnect from IBKR if connected
+            if ib and ib.isConnected():
+                ib.disconnect()
+
             return True
 
         # If today is a trading day, proceed with the bot
@@ -2124,8 +2158,9 @@ def check_and_exit_delayed_positions(ib):
             logger.info(f"Found {len(all_symbols)} potential earnings plays: {', '.join(all_symbols)}")
 
             if all_symbols:
-                # Connect to IBKR
-                ib = connect_to_ibkr()
+                # Connect to IBKR if not already connected
+                if not ib or not ib.isConnected():
+                    ib = connect_to_ibkr()
 
                 if ib and ib.isConnected():
                     # For testing/manual mode, process symbols immediately
@@ -2167,8 +2202,14 @@ def check_and_exit_delayed_positions(ib):
                     send_error_notification(error_msg)
             else:
                 logger.info("No earnings announcements found for the specified time periods")
+                # Disconnect from IBKR if connected
+                if ib and ib.isConnected():
+                    ib.disconnect()
         else:
             logger.info("Today is not a trading day. Exiting.")
+            # Disconnect from IBKR if connected
+            if ib and ib.isConnected():
+                ib.disconnect()
 
         # Send daily performance report if not already scheduled
         send_performance_report()
@@ -2182,7 +2223,6 @@ def check_and_exit_delayed_positions(ib):
         logger.error(traceback_info)
         send_error_notification(error_msg, traceback_info)
         return False
-
 
 if __name__ == "__main__":
     try:
