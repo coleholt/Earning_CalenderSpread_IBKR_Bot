@@ -1,0 +1,12 @@
+2025-04-27 18:10:14,599 - INFO - Watchdog monitoring started
+2025-04-27 18:10:20,646 - INFO - Scheduled daily report for 2025-04-28 20:00:00 ET
+2025-04-27 18:10:20,646 - INFO - (82179 seconds from now)
+2025-04-27 18:10:21,618 - ERROR - Error checking market holidays: FinnhubAPIException(status_code: 401): Invalid API key
+2025-04-27 18:10:21,862 - ERROR - Error checking market status: FinnhubAPIException(status_code: 401): Invalid API key
+2025-04-27 18:10:21,862 - INFO - Market is currently CLOSED
+2025-04-27 18:10:21,863 - INFO - Today (2025-04-27): Trading day: No
+2025-04-27 18:10:21,863 - INFO - Next trading day: 2025-04-28
+2025-04-27 18:10:21,863 - INFO - Today is not a trading day. Exiting.
+2025-04-27 18:10:21,864 - INFO - Trade history saved with 0 trades
+2025-04-27 18:10:23,289 - ERROR - Failed to send email alert: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-73e25a9d459sm6977002b3a.146 - gsmtp')
+2025-04-27 18:10:23,289 - INFO - Performance report sent successfully
