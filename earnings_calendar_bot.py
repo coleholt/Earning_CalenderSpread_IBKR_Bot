@@ -7,6 +7,7 @@ entering positions shortly before market close and exiting after the next market
 """
 
 import finnhub
+from ib_insync import LimitOrder, MarketOrder
 import json
 import datetime
 import pandas as pd
@@ -1620,7 +1621,7 @@ def place_calendar_spread_order(ib, calendar_spread, account_size, risk_percent=
 
         # Place the order with limit price slightly above the debit
         # Add small buffer to increase chance of fill
-        limit_price = calendar_spread['debit'] * 1.01
+        limit_price = calendar_spread['debit'] * 1.005
         order = LimitOrder('BUY', contracts_to_trade, limit_price)
 
         # Add order properties for spread orders
@@ -1680,41 +1681,85 @@ def close_position(ib, trade_info):
             logger.error(f"Could not find trade with order ID {order_id}")
             return False
 
-        # Create a closing order (reverse of the original order)
-        close_order = MarketOrder('SELL', trade_info['contracts'])
+        # Get current market price to determine limit price
+        ticker = ib.reqMktData(trade.contract)
+        ib.sleep(1)  # Wait to get market data
+        current_price = ticker.marketPrice()
+        ib.cancelMktData(trade.contract)
+
+        # Calculate limit price with 0.5% buffer
+        # For closing a long position, we want to sell at or below market price to increase fill chance
+        limit_price = current_price * 0.995  # 0.5% below market price to increase chance of fill
+
+        # Create a closing order using LimitOrder
+        close_order = LimitOrder('SELL', trade_info['contracts'], limit_price)
 
         # Submit the closing order using the same contract
         close_trade = ib.placeOrder(trade.contract, close_order)
 
-        # Get the exit price - wait for fill if needed
+        # Set up a timeout for limit order (5 minutes = 300 seconds)
+        limit_timeout = 300  # 5 minutes in seconds
+        start_time = datetime.datetime.now()
+        is_filled = False
         exit_price = None
-        max_attempts = 10
-        attempt = 0
 
-        while exit_price is None and attempt < max_attempts:
-            ib.sleep(1)  # Wait for order to start executing
+        # Wait for order to fill, checking every 30 seconds
+        while (datetime.datetime.now() - start_time).total_seconds() < limit_timeout and not is_filled:
+            logger.info(
+                f"Waiting for limit order to fill... elapsed time: {(datetime.datetime.now() - start_time).total_seconds():.0f} seconds")
+
+            # Check if order has been filled
             fills = ib.fills()
-
-            # Find our close order in fills
             for fill in fills:
                 if fill.execution.orderId == close_trade.order.orderId:
                     exit_price = fill.execution.price
+                    is_filled = True
+                    logger.info(f"Limit order filled at ${exit_price:.2f}")
                     break
 
-            attempt += 1
+            # Check order status
+            ib.sleep(30)  # Check every 30 seconds
 
-        # If we couldn't get the actual fill price, use current market price as estimate
+        # If limit order not filled after timeout, cancel it and place market order
+        if not is_filled:
+            logger.warning(
+                f"Limit order not filled after {limit_timeout / 60:.1f} minutes. Cancelling and placing market order.")
+
+            # Cancel the limit order
+            ib.cancelOrder(close_trade.order)
+
+            # Place market order instead
+            market_order = MarketOrder('SELL', trade_info['contracts'])
+            market_trade = ib.placeOrder(trade.contract, market_order)
+
+            # Wait for market order to fill
+            ib.sleep(2)  # Give a moment for order to start executing
+
+            # Look for market order fill
+            max_attempts = 5
+            attempt = 0
+            while exit_price is None and attempt < max_attempts:
+                fills = ib.fills()
+                for fill in fills:
+                    if fill.execution.orderId == market_trade.order.orderId:
+                        exit_price = fill.execution.price
+                        logger.info(f"Market order filled at ${exit_price:.2f}")
+                        break
+                attempt += 1
+                ib.sleep(1)
+
+        # If we still couldn't get the actual fill price, use current market price as estimate
         if exit_price is None:
             ticker = ib.reqMktData(trade.contract)
             ib.sleep(1)
             exit_price = ticker.marketPrice()
             ib.cancelMktData(trade.contract)
+            logger.warning(f"Could not get actual fill price, using current market price ${exit_price:.2f} as estimate")
 
         # Record trade exit in history
-        if exit_price:
-            update_trade_exit(order_id, exit_price)
+        update_trade_exit(order_id, exit_price)
 
-        logger.info(f"Placed closing order for {trade_info['symbol']} {trade_info['strategy']} at price {exit_price}")
+        logger.info(f"Closed position for {trade_info['symbol']} {trade_info['strategy']} at price ${exit_price:.2f}")
         return True
 
     except Exception as e:
@@ -1723,7 +1768,6 @@ def close_position(ib, trade_info):
         logger.error(traceback_info)
         send_error_notification(f"Error closing position for {trade_info['symbol']}", traceback_info)
         return False
-
 
 def calculate_dte(expiration_date):
     """Calculate trading days to expiration from today
