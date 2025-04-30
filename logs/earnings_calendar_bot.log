@@ -10,3 +10,1180 @@
 2025-04-27 18:10:21,864 - INFO - Trade history saved with 0 trades
 2025-04-27 18:10:23,289 - ERROR - Failed to send email alert: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-73e25a9d459sm6977002b3a.146 - gsmtp')
 2025-04-27 18:10:23,289 - INFO - Performance report sent successfully
+2025-04-27 21:52:34,389 - INFO - Watchdog monitoring started
+2025-04-27 21:52:34,572 - INFO - Scheduled daily report for 2025-04-28 20:00:00 ET
+2025-04-27 21:52:34,572 - INFO - (68845 seconds from now)
+2025-04-27 21:52:34,891 - ERROR - Error checking market holidays: 'str' object has no attribute 'get'
+2025-04-27 21:52:34,893 - INFO - Connecting to IBKR at 127.0.0.1:7497 with client ID 1
+2025-04-27 21:52:34,896 - INFO - Connecting to 127.0.0.1:7497 with clientId 1...
+2025-04-27 21:52:34,897 - INFO - Connected
+2025-04-27 21:52:34,934 - INFO - Logged on to server version 176
+2025-04-27 21:52:34,949 - INFO - API connection ready
+2025-04-27 21:52:34,951 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm.nj
+2025-04-27 21:52:34,952 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:cashfarm
+2025-04-27 21:52:34,955 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm
+2025-04-27 21:52:34,956 - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2025-04-27 21:52:34,957 - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:fundfarm
+2025-04-27 21:52:34,957 - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:ushmds
+2025-04-27 21:52:34,958 - INFO - Warning 2158, reqId -1: Sec-def data farm connection is OK:secdefil
+2025-04-27 21:52:35,264 - INFO - Synchronization complete
+2025-04-27 21:52:35,268 - INFO - Successfully connected to IBKR
+2025-04-27 21:52:35,360 - WARNING - WARNING: Connected to LIVE trading account!
+2025-04-27 21:52:35,613 - INFO - Market is currently CLOSED
+2025-04-27 21:52:35,922 - ERROR - Error checking market holidays: 'str' object has no attribute 'get'
+2025-04-27 21:52:35,923 - INFO - Today (2025-04-28): Trading day: Yes
+2025-04-27 21:52:35,924 - INFO - Next trading day: 2025-04-29
+2025-04-27 21:52:35,924 - INFO - Running in pre-screening mode
+2025-04-27 21:52:35,925 - INFO - Starting early pre-screening of earnings symbols
+2025-04-27 21:52:36,218 - ERROR - Error checking market holidays: 'str' object has no attribute 'get'
+2025-04-27 21:52:37,206 - INFO - Found 140 potential earnings plays: ECL, SBUX, CLVT, MO, SPCB, CDNS, NTST, ICDIQ, UHS, CZWI, EFTR, CINF, NBN, SPGI, ABG, HLT, ARCC, RBOT, FSUN, EZPW, SSD, ALRS, LEG, CECO, UAN, ARCB, BALY, PUMP, NXRT, DEA, TER, INCY, CNO, NXPI, FSFG, CWK, GLW, NARI, RGEN, NEO, CCK, XYL, GABC, PCAR, FPI, WELL, AMT, CVI, HTLD, MLI, SBAC, FPAY, NAUT, OMF, ETR, EAT, FSBC, SYY, UCTT, CVLT, RMBS, AWI, FELE, THC, GBFH, FCF, NVR, WM, CBU, BRO, NTRB, TZOO, CDP, HOUS, SPOT, PFE, REGN, SOFI, FISI, PII, UPS, NE, BRX, ARE, GM, SEVN, WRLD, FOUR, AROW, LGIH, HMST, UFPI, TRS, HRZN, NUE, ALLGF, SFD, KFRC, SSKN, SBSI, LH, SHW, RBB, BYON, TWO, ZBRA, PDM, RCL, RIG, CR, HON, SANM, FBRT, MED, SCL, HLMN, BCAL, OPCH, SEI, EPD, NOV, AMKR, PJT, WWD, SMBC, FFIV, APM, KHC, HLIT, KO, PYPL, ABCB, EFSC, ASTE, NSP, AOS, PCH, JBLU, SJW, NWBI
+2025-04-27 21:52:37,211 - INFO - Pre-screening ECL...
+2025-04-27 21:52:37,211 - INFO - Analyzing metrics for ECL
+2025-04-27 21:52:49,825 - INFO - ECL 30-day avg volume: 1513023
+2025-04-27 21:52:50,242 - INFO - ECL term structure slope (0-45): -0.000056
+2025-04-27 21:52:50,247 - INFO - ECL IV30/RV30 ratio: 0.01
+2025-04-27 21:52:50,251 - INFO - Pre-screening complete for ECL: FAILED
+2025-04-27 21:52:50,251 - INFO - Pre-screening SBUX...
+2025-04-27 21:52:50,253 - INFO - Analyzing metrics for SBUX
+2025-04-27 21:53:02,388 - INFO - SBUX 30-day avg volume: 11154717
+2025-04-27 21:53:03,430 - INFO - SBUX term structure slope (0-45): -0.000063
+2025-04-27 21:53:03,440 - INFO - SBUX IV30/RV30 ratio: 0.00
+2025-04-27 21:53:03,442 - INFO - Pre-screening complete for SBUX: FAILED
+2025-04-27 21:53:03,442 - INFO - Pre-screening CLVT...
+2025-04-27 21:53:03,443 - INFO - Analyzing metrics for CLVT
+2025-04-27 21:53:15,560 - INFO - CLVT 30-day avg volume: 6295380
+2025-04-27 21:53:15,826 - INFO - CLVT term structure slope (0-45): -0.001984
+2025-04-27 21:53:15,830 - INFO - CLVT IV30/RV30 ratio: 0.30
+2025-04-27 21:53:15,831 - INFO - Pre-screening complete for CLVT: FAILED
+2025-04-27 21:53:15,831 - INFO - Pre-screening MO...
+2025-04-27 21:53:15,833 - INFO - Analyzing metrics for MO
+2025-04-27 21:53:28,135 - INFO - MO 30-day avg volume: 11708543
+2025-04-27 21:53:28,981 - INFO - MO term structure slope (0-45): -0.000129
+2025-04-27 21:53:28,989 - INFO - MO IV30/RV30 ratio: 0.01
+2025-04-27 21:53:28,990 - INFO - Pre-screening complete for MO: FAILED
+2025-04-27 21:53:28,990 - INFO - Pre-screening SPCB...
+2025-04-27 21:53:28,991 - INFO - Analyzing metrics for SPCB
+2025-04-27 21:53:41,114 - INFO - SPCB 30-day avg volume: 103770
+2025-04-27 21:53:41,149 - ERROR - No options found for SPCB
+2025-04-27 21:53:41,150 - INFO - Pre-screening CDNS...
+2025-04-27 21:53:41,151 - INFO - Analyzing metrics for CDNS
+2025-04-27 21:53:53,275 - INFO - CDNS 30-day avg volume: 2313467
+2025-04-27 21:53:53,989 - INFO - CDNS term structure slope (0-45): -0.000014
+2025-04-27 21:53:53,993 - INFO - CDNS IV30/RV30 ratio: 0.00
+2025-04-27 21:53:53,993 - INFO - Pre-screening complete for CDNS: FAILED
+2025-04-27 21:53:53,993 - INFO - Pre-screening NTST...
+2025-04-27 21:53:53,994 - INFO - Analyzing metrics for NTST
+2025-04-27 21:54:06,137 - INFO - NTST 30-day avg volume: 996463
+2025-04-27 21:54:06,357 - INFO - NTST term structure slope (0-45): -0.000172
+2025-04-27 21:54:06,363 - INFO - NTST IV30/RV30 ratio: 0.08
+2025-04-27 21:54:06,364 - INFO - Pre-screening complete for NTST: FAILED
+2025-04-27 21:54:06,364 - INFO - Pre-screening ICDIQ...
+2025-04-27 21:54:06,365 - INFO - Analyzing metrics for ICDIQ
+2025-04-27 21:54:20,106 - ERROR - $ICDIQ: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+2025-04-27 21:54:20,106 - ERROR - No price history found for ICDIQ
+2025-04-27 21:54:20,107 - INFO - Pre-screening UHS...
+2025-04-27 21:54:20,108 - INFO - Analyzing metrics for UHS
+2025-04-27 21:54:33,475 - INFO - UHS 30-day avg volume: 878523
+2025-04-27 21:54:35,922 - INFO - UHS term structure slope (0-45): 0.000223
+2025-04-27 21:54:35,927 - INFO - UHS IV30/RV30 ratio: 0.02
+2025-04-27 21:54:35,928 - INFO - Pre-screening complete for UHS: FAILED
+2025-04-27 21:54:35,928 - INFO - Pre-screening CZWI...
+2025-04-27 21:54:35,929 - INFO - Analyzing metrics for CZWI
+2025-04-27 21:54:48,135 - INFO - CZWI 30-day avg volume: 20697
+2025-04-27 21:54:48,297 - ERROR - No options found for CZWI
+2025-04-27 21:54:48,298 - INFO - Pre-screening EFTR...
+2025-04-27 21:54:48,299 - INFO - Analyzing metrics for EFTR
+2025-04-27 21:55:00,400 - INFO - EFTR 30-day avg volume: 1140
+2025-04-27 21:55:00,433 - ERROR - No options found for EFTR
+2025-04-27 21:55:00,435 - INFO - Pre-screening CINF...
+2025-04-27 21:55:00,436 - INFO - Analyzing metrics for CINF
+2025-04-27 21:55:12,684 - INFO - CINF 30-day avg volume: 870267
+2025-04-27 21:55:13,071 - INFO - CINF term structure slope (0-45): -0.000112
+2025-04-27 21:55:13,077 - INFO - CINF IV30/RV30 ratio: 0.02
+2025-04-27 21:55:13,080 - INFO - Pre-screening complete for CINF: FAILED
+2025-04-27 21:55:13,083 - INFO - Pre-screening NBN...
+2025-04-27 21:55:13,084 - INFO - Analyzing metrics for NBN
+2025-04-27 21:55:25,279 - INFO - NBN 30-day avg volume: 43587
+2025-04-27 21:55:25,317 - ERROR - No options found for NBN
+2025-04-27 21:55:25,318 - INFO - Pre-screening SPGI...
+2025-04-27 21:55:25,319 - INFO - Analyzing metrics for SPGI
+2025-04-27 21:55:37,555 - INFO - SPGI 30-day avg volume: 1426547
+2025-04-27 21:55:38,578 - INFO - SPGI term structure slope (0-45): 0.000502
+2025-04-27 21:55:38,586 - INFO - SPGI IV30/RV30 ratio: 0.00
+2025-04-27 21:55:38,586 - INFO - Pre-screening complete for SPGI: FAILED
+2025-04-27 21:55:38,587 - INFO - Pre-screening ABG...
+2025-04-27 21:55:38,588 - INFO - Analyzing metrics for ABG
+2025-04-27 21:55:50,694 - INFO - ABG 30-day avg volume: 284037
+2025-04-27 21:55:51,046 - INFO - ABG term structure slope (0-45): -0.000124
+2025-04-27 21:55:51,054 - INFO - ABG IV30/RV30 ratio: 0.01
+2025-04-27 21:55:51,055 - INFO - Pre-screening complete for ABG: FAILED
+2025-04-27 21:55:51,055 - INFO - Pre-screening HLT...
+2025-04-27 21:55:51,056 - INFO - Analyzing metrics for HLT
+2025-04-27 21:56:03,200 - INFO - HLT 30-day avg volume: 2773147
+2025-04-27 21:56:03,794 - INFO - HLT term structure slope (0-45): 0.000000
+2025-04-27 21:56:03,800 - INFO - HLT IV30/RV30 ratio: 0.00
+2025-04-27 21:56:03,801 - INFO - Pre-screening complete for HLT: FAILED
+2025-04-27 21:56:03,802 - INFO - Pre-screening ARCC...
+2025-04-27 21:56:03,802 - INFO - Analyzing metrics for ARCC
+2025-04-27 21:56:15,967 - INFO - ARCC 30-day avg volume: 6307943
+2025-04-27 21:56:16,336 - INFO - ARCC term structure slope (0-45): -0.000056
+2025-04-27 21:56:16,342 - INFO - ARCC IV30/RV30 ratio: 0.01
+2025-04-27 21:56:16,343 - INFO - Pre-screening complete for ARCC: FAILED
+2025-04-27 21:56:16,343 - INFO - Pre-screening RBOT...
+2025-04-27 21:56:16,345 - INFO - Analyzing metrics for RBOT
+2025-04-27 21:56:28,474 - INFO - RBOT 30-day avg volume: 21357
+2025-04-27 21:56:28,508 - ERROR - No options found for RBOT
+2025-04-27 21:56:28,509 - INFO - Pre-screening FSUN...
+2025-04-27 21:56:28,510 - INFO - Analyzing metrics for FSUN
+2025-04-27 21:56:40,635 - INFO - FSUN 30-day avg volume: 125973
+2025-04-27 21:56:40,666 - ERROR - No options found for FSUN
+2025-04-27 21:56:40,667 - INFO - Pre-screening EZPW...
+2025-04-27 21:56:40,667 - INFO - Analyzing metrics for EZPW
+2025-04-27 21:56:52,770 - INFO - EZPW 30-day avg volume: 1650920
+2025-04-27 21:56:52,996 - INFO - EZPW term structure slope (0-45): 0.000000
+2025-04-27 21:56:53,001 - INFO - EZPW IV30/RV30 ratio: 0.06
+2025-04-27 21:56:53,002 - INFO - Pre-screening complete for EZPW: FAILED
+2025-04-27 21:56:53,002 - INFO - Pre-screening SSD...
+2025-04-27 21:56:53,003 - INFO - Analyzing metrics for SSD
+2025-04-27 21:57:05,172 - INFO - SSD 30-day avg volume: 287540
+2025-04-27 21:57:05,387 - INFO - SSD term structure slope (0-45): 0.008067
+2025-04-27 21:57:05,406 - INFO - SSD IV30/RV30 ratio: 0.25
+2025-04-27 21:57:05,407 - INFO - Pre-screening complete for SSD: FAILED
+2025-04-27 21:57:05,407 - INFO - Pre-screening ALRS...
+2025-04-27 21:57:05,408 - INFO - Analyzing metrics for ALRS
+2025-04-27 21:57:17,600 - INFO - ALRS 30-day avg volume: 75233
+2025-04-27 21:57:17,759 - ERROR - Not enough IV data points for term structure for ALRS
+2025-04-27 21:57:17,760 - INFO - Pre-screening LEG...
+2025-04-27 21:57:17,761 - INFO - Analyzing metrics for LEG
+2025-04-27 21:57:29,978 - INFO - LEG 30-day avg volume: 3318350
+2025-04-27 21:57:30,300 - INFO - LEG term structure slope (0-45): -0.000446
+2025-04-27 21:57:30,306 - INFO - LEG IV30/RV30 ratio: 0.04
+2025-04-27 21:57:30,306 - INFO - Pre-screening complete for LEG: FAILED
+2025-04-27 21:57:30,307 - INFO - Pre-screening CECO...
+2025-04-27 21:57:30,308 - INFO - Analyzing metrics for CECO
+2025-04-27 21:57:42,431 - INFO - CECO 30-day avg volume: 303397
+2025-04-27 21:57:42,682 - INFO - CECO term structure slope (0-45): -0.000021
+2025-04-27 21:57:42,686 - INFO - CECO IV30/RV30 ratio: 0.01
+2025-04-27 21:57:42,687 - INFO - Pre-screening complete for CECO: FAILED
+2025-04-27 21:57:42,688 - INFO - Pre-screening UAN...
+2025-04-27 21:57:42,689 - INFO - Analyzing metrics for UAN
+2025-04-27 21:57:54,834 - INFO - UAN 30-day avg volume: 30143
+2025-04-27 21:57:55,147 - INFO - UAN term structure slope (0-45): 0.000670
+2025-04-27 21:57:55,152 - INFO - UAN IV30/RV30 ratio: 0.05
+2025-04-27 21:57:55,153 - INFO - Pre-screening complete for UAN: FAILED
+2025-04-27 21:57:55,154 - INFO - Pre-screening ARCB...
+2025-04-27 21:57:55,155 - INFO - Analyzing metrics for ARCB
+2025-04-27 21:58:07,363 - INFO - ARCB 30-day avg volume: 399373
+2025-04-27 21:58:07,693 - INFO - ARCB term structure slope (0-45): 0.000893
+2025-04-27 21:58:07,699 - INFO - ARCB IV30/RV30 ratio: 0.03
+2025-04-27 21:58:07,699 - INFO - Pre-screening complete for ARCB: FAILED
+2025-04-27 21:58:07,700 - INFO - Pre-screening BALY...
+2025-04-27 21:58:07,700 - INFO - Analyzing metrics for BALY
+2025-04-27 21:58:19,814 - INFO - BALY 30-day avg volume: 46250
+2025-04-27 21:58:19,849 - ERROR - No options found for BALY
+2025-04-27 21:58:19,850 - INFO - Pre-screening PUMP...
+2025-04-27 21:58:19,851 - INFO - Analyzing metrics for PUMP
+2025-04-27 21:58:31,958 - INFO - PUMP 30-day avg volume: 1708787
+2025-04-27 21:58:32,196 - INFO - PUMP term structure slope (0-45): -0.000893
+2025-04-27 21:58:32,204 - INFO - PUMP IV30/RV30 ratio: 0.06
+2025-04-27 21:58:32,206 - INFO - Pre-screening complete for PUMP: FAILED
+2025-04-27 21:58:32,206 - INFO - Pre-screening NXRT...
+2025-04-27 21:58:32,207 - INFO - Analyzing metrics for NXRT
+2025-04-27 21:58:44,342 - INFO - NXRT 30-day avg volume: 175210
+2025-04-27 21:58:44,585 - INFO - NXRT term structure slope (0-45): -0.016764
+2025-04-27 21:58:44,592 - INFO - NXRT IV30/RV30 ratio: 4.35
+2025-04-27 21:58:44,592 - INFO - Pre-screening complete for NXRT: FAILED
+2025-04-27 21:58:44,593 - INFO - Pre-screening DEA...
+2025-04-27 21:58:44,593 - INFO - Analyzing metrics for DEA
+2025-04-27 21:58:56,718 - INFO - DEA 30-day avg volume: 711662
+2025-04-27 21:58:56,957 - INFO - DEA term structure slope (0-45): 0.003125
+2025-04-27 21:58:56,962 - INFO - DEA IV30/RV30 ratio: 1.49
+2025-04-27 21:58:56,963 - INFO - Pre-screening complete for DEA: FAILED
+2025-04-27 21:58:56,963 - INFO - Pre-screening TER...
+2025-04-27 21:58:56,965 - INFO - Analyzing metrics for TER
+2025-04-27 21:59:09,943 - INFO - TER 30-day avg volume: 3899733
+2025-04-27 21:59:11,647 - INFO - TER term structure slope (0-45): -0.000223
+2025-04-27 21:59:11,655 - INFO - TER IV30/RV30 ratio: 0.02
+2025-04-27 21:59:11,656 - INFO - Pre-screening complete for TER: FAILED
+2025-04-27 21:59:11,656 - INFO - Pre-screening INCY...
+2025-04-27 21:59:11,657 - INFO - Analyzing metrics for INCY
+2025-04-27 21:59:23,828 - INFO - INCY 30-day avg volume: 2279210
+2025-04-27 21:59:24,200 - INFO - INCY term structure slope (0-45): -0.000112
+2025-04-27 21:59:24,206 - INFO - INCY IV30/RV30 ratio: 0.01
+2025-04-27 21:59:24,207 - INFO - Pre-screening complete for INCY: FAILED
+2025-04-27 21:59:24,207 - INFO - Pre-screening CNO...
+2025-04-27 21:59:24,208 - INFO - Analyzing metrics for CNO
+2025-04-27 21:59:36,377 - INFO - CNO 30-day avg volume: 839550
+2025-04-27 21:59:36,613 - INFO - CNO term structure slope (0-45): -0.000335
+2025-04-27 21:59:36,622 - INFO - CNO IV30/RV30 ratio: 0.02
+2025-04-27 21:59:36,623 - INFO - Pre-screening complete for CNO: FAILED
+2025-04-27 21:59:36,623 - INFO - Pre-screening NXPI...
+2025-04-27 21:59:36,624 - INFO - Analyzing metrics for NXPI
+2025-04-27 21:59:48,771 - INFO - NXPI 30-day avg volume: 3635727
+2025-04-27 21:59:49,745 - INFO - NXPI term structure slope (0-45): 0.001329
+2025-04-27 21:59:49,751 - INFO - NXPI IV30/RV30 ratio: 0.01
+2025-04-27 21:59:49,752 - INFO - Pre-screening complete for NXPI: FAILED
+2025-04-27 21:59:49,752 - INFO - Pre-screening FSFG...
+2025-04-27 21:59:49,754 - INFO - Analyzing metrics for FSFG
+2025-04-27 22:00:01,916 - INFO - FSFG 30-day avg volume: 11013
+2025-04-27 22:00:01,951 - ERROR - No options found for FSFG
+2025-04-27 22:00:01,952 - INFO - Pre-screening CWK...
+2025-04-27 22:00:01,953 - INFO - Analyzing metrics for CWK
+2025-04-27 22:00:14,087 - INFO - CWK 30-day avg volume: 2569970
+2025-04-27 22:00:14,400 - INFO - CWK term structure slope (0-45): -0.001030
+2025-04-27 22:00:14,406 - INFO - CWK IV30/RV30 ratio: 0.16
+2025-04-27 22:00:14,407 - INFO - Pre-screening complete for CWK: FAILED
+2025-04-27 22:00:14,407 - INFO - Pre-screening GLW...
+2025-04-27 22:00:14,410 - INFO - Analyzing metrics for GLW
+2025-04-27 22:00:26,612 - INFO - GLW 30-day avg volume: 7131923
+2025-04-27 22:00:27,557 - INFO - GLW term structure slope (0-45): -0.000167
+2025-04-27 22:00:27,561 - INFO - GLW IV30/RV30 ratio: 0.00
+2025-04-27 22:00:27,562 - INFO - Pre-screening complete for GLW: FAILED
+2025-04-27 22:00:27,562 - INFO - Pre-screening NARI...
+2025-04-27 22:00:27,563 - INFO - Analyzing metrics for NARI
+2025-04-27 22:00:41,400 - ERROR - 404 Client Error: Not Found for url: https://query2.finance.yahoo.com/v10/finance/quoteSummary/NARI?modules=financialData%2CquoteType%2CdefaultKeyStatistics%2CassetProfile%2CsummaryDetail&corsDomain=finance.yahoo.com&formatted=false&symbol=NARI&crumb=CAzLlVmC%2FGx
+2025-04-27 22:00:42,284 - ERROR - $NARI: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+2025-04-27 22:00:42,286 - ERROR - No price history found for NARI
+2025-04-27 22:00:42,286 - INFO - Pre-screening RGEN...
+2025-04-27 22:00:42,287 - INFO - Analyzing metrics for RGEN
+2025-04-27 22:00:54,390 - INFO - RGEN 30-day avg volume: 857483
+2025-04-27 22:00:54,726 - INFO - RGEN term structure slope (0-45): 0.000000
+2025-04-27 22:00:54,731 - INFO - RGEN IV30/RV30 ratio: 0.00
+2025-04-27 22:00:54,732 - INFO - Pre-screening complete for RGEN: FAILED
+2025-04-27 22:00:54,733 - INFO - Pre-screening NEO...
+2025-04-27 22:00:54,734 - INFO - Analyzing metrics for NEO
+2025-04-27 22:01:06,854 - INFO - NEO 30-day avg volume: 1678340
+2025-04-27 22:01:07,160 - INFO - NEO term structure slope (0-45): -0.000086
+2025-04-27 22:01:07,168 - INFO - NEO IV30/RV30 ratio: 0.02
+2025-04-27 22:01:07,169 - INFO - Pre-screening complete for NEO: FAILED
+2025-04-27 22:01:07,169 - INFO - Pre-screening CCK...
+2025-04-27 22:01:07,170 - INFO - Analyzing metrics for CCK
+2025-04-27 22:01:19,358 - INFO - CCK 30-day avg volume: 1277207
+2025-04-27 22:01:19,743 - INFO - CCK term structure slope (0-45): 0.000769
+2025-04-27 22:01:19,752 - INFO - CCK IV30/RV30 ratio: 0.56
+2025-04-27 22:01:19,753 - INFO - Pre-screening complete for CCK: FAILED
+2025-04-27 22:01:19,753 - INFO - Pre-screening XYL...
+2025-04-27 22:01:19,754 - INFO - Analyzing metrics for XYL
+2025-04-27 22:01:31,928 - INFO - XYL 30-day avg volume: 2082453
+2025-04-27 22:01:32,276 - INFO - XYL term structure slope (0-45): -0.000112
+2025-04-27 22:01:32,285 - INFO - XYL IV30/RV30 ratio: 0.02
+2025-04-27 22:01:32,286 - INFO - Pre-screening complete for XYL: FAILED
+2025-04-27 22:01:32,286 - INFO - Pre-screening GABC...
+2025-04-27 22:01:32,287 - INFO - Analyzing metrics for GABC
+2025-04-27 22:01:44,510 - INFO - GABC 30-day avg volume: 142357
+2025-04-27 22:01:44,675 - INFO - GABC term structure slope (0-45): 0.018847
+2025-04-27 22:01:44,684 - INFO - GABC IV30/RV30 ratio: 0.44
+2025-04-27 22:01:44,687 - INFO - Pre-screening complete for GABC: FAILED
+2025-04-27 22:01:44,687 - INFO - Pre-screening PCAR...
+2025-04-27 22:01:44,688 - INFO - Analyzing metrics for PCAR
+2025-04-27 22:01:56,908 - INFO - PCAR 30-day avg volume: 3384463
+2025-04-27 22:01:57,490 - INFO - PCAR term structure slope (0-45): -0.000014
+2025-04-27 22:01:57,495 - INFO - PCAR IV30/RV30 ratio: 0.00
+2025-04-27 22:01:57,499 - INFO - Pre-screening complete for PCAR: FAILED
+2025-04-27 22:01:57,499 - INFO - Pre-screening FPI...
+2025-04-27 22:01:57,500 - INFO - Analyzing metrics for FPI
+2025-04-27 22:02:11,877 - INFO - FPI 30-day avg volume: 376887
+2025-04-27 22:02:12,123 - INFO - FPI term structure slope (0-45): -0.000112
+2025-04-27 22:02:12,130 - INFO - FPI IV30/RV30 ratio: 0.02
+2025-04-27 22:02:12,131 - INFO - Pre-screening complete for FPI: FAILED
+2025-04-27 22:02:12,132 - INFO - Pre-screening WELL...
+2025-04-27 22:02:12,133 - INFO - Analyzing metrics for WELL
+2025-04-27 22:02:24,439 - INFO - WELL 30-day avg volume: 3513950
+2025-04-27 22:02:24,891 - INFO - WELL term structure slope (0-45): -0.000112
+2025-04-27 22:02:24,901 - INFO - WELL IV30/RV30 ratio: 0.02
+2025-04-27 22:02:24,903 - INFO - Pre-screening complete for WELL: FAILED
+2025-04-27 22:02:24,904 - INFO - Pre-screening AMT...
+2025-04-27 22:02:24,905 - INFO - Analyzing metrics for AMT
+2025-04-27 22:02:37,044 - INFO - AMT 30-day avg volume: 3628773
+2025-04-27 22:02:37,670 - INFO - AMT term structure slope (0-45): 0.000000
+2025-04-27 22:02:37,673 - INFO - AMT IV30/RV30 ratio: 0.01
+2025-04-27 22:02:37,674 - INFO - Pre-screening complete for AMT: FAILED
+2025-04-27 22:02:37,675 - INFO - Pre-screening CVI...
+2025-04-27 22:02:37,676 - INFO - Analyzing metrics for CVI
+2025-04-27 22:02:49,805 - INFO - CVI 30-day avg volume: 1044253
+2025-04-27 22:02:50,064 - INFO - CVI term structure slope (0-45): -0.000446
+2025-04-27 22:02:50,070 - INFO - CVI IV30/RV30 ratio: 0.04
+2025-04-27 22:02:50,070 - INFO - Pre-screening complete for CVI: FAILED
+2025-04-27 22:02:50,071 - INFO - Pre-screening HTLD...
+2025-04-27 22:02:50,072 - INFO - Analyzing metrics for HTLD
+2025-04-27 22:03:02,324 - INFO - HTLD 30-day avg volume: 496693
+2025-04-27 22:03:02,538 - INFO - HTLD term structure slope (0-45): 0.000893
+2025-04-27 22:03:02,547 - INFO - HTLD IV30/RV30 ratio: 0.02
+2025-04-27 22:03:02,548 - INFO - Pre-screening complete for HTLD: FAILED
+2025-04-27 22:03:02,548 - INFO - Pre-screening MLI...
+2025-04-27 22:03:02,549 - INFO - Analyzing metrics for MLI
+2025-04-27 22:03:14,738 - INFO - MLI 30-day avg volume: 1022170
+2025-04-27 22:03:14,980 - INFO - MLI term structure slope (0-45): -0.000223
+2025-04-27 22:03:14,984 - INFO - MLI IV30/RV30 ratio: 0.02
+2025-04-27 22:03:14,985 - INFO - Pre-screening complete for MLI: FAILED
+2025-04-27 22:03:14,985 - INFO - Pre-screening SBAC...
+2025-04-27 22:03:14,986 - INFO - Analyzing metrics for SBAC
+2025-04-27 22:03:27,121 - INFO - SBAC 30-day avg volume: 1118383
+2025-04-27 22:03:27,391 - INFO - SBAC term structure slope (0-45): -0.000112
+2025-04-27 22:03:27,400 - INFO - SBAC IV30/RV30 ratio: 0.02
+2025-04-27 22:03:27,401 - INFO - Pre-screening complete for SBAC: FAILED
+2025-04-27 22:03:27,401 - INFO - Pre-screening FPAY...
+2025-04-27 22:03:27,402 - INFO - Analyzing metrics for FPAY
+2025-04-27 22:03:39,548 - INFO - FPAY 30-day avg volume: 56130
+2025-04-27 22:03:39,585 - ERROR - No options found for FPAY
+2025-04-27 22:03:39,586 - INFO - Pre-screening NAUT...
+2025-04-27 22:03:39,586 - INFO - Analyzing metrics for NAUT
+2025-04-27 22:03:51,697 - INFO - NAUT 30-day avg volume: 183237
+2025-04-27 22:03:51,907 - ERROR - Not enough IV data points for term structure for NAUT
+2025-04-27 22:03:51,907 - INFO - Pre-screening OMF...
+2025-04-27 22:03:51,909 - INFO - Analyzing metrics for OMF
+2025-04-27 22:04:04,036 - INFO - OMF 30-day avg volume: 1430477
+2025-04-27 22:04:04,424 - INFO - OMF term structure slope (0-45): -0.000223
+2025-04-27 22:04:04,432 - INFO - OMF IV30/RV30 ratio: 0.02
+2025-04-27 22:04:04,433 - INFO - Pre-screening complete for OMF: FAILED
+2025-04-27 22:04:04,433 - INFO - Pre-screening ETR...
+2025-04-27 22:04:04,434 - INFO - Analyzing metrics for ETR
+2025-04-27 22:04:16,699 - INFO - ETR 30-day avg volume: 4816180
+2025-04-27 22:04:17,049 - INFO - ETR term structure slope (0-45): -0.000056
+2025-04-27 22:04:17,057 - INFO - ETR IV30/RV30 ratio: 0.01
+2025-04-27 22:04:17,058 - INFO - Pre-screening complete for ETR: FAILED
+2025-04-27 22:04:17,058 - INFO - Pre-screening EAT...
+2025-04-27 22:04:17,060 - INFO - Analyzing metrics for EAT
+2025-04-27 22:04:29,217 - INFO - EAT 30-day avg volume: 1465080
+2025-04-27 22:04:29,898 - INFO - EAT term structure slope (0-45): -0.000028
+2025-04-27 22:04:29,902 - INFO - EAT IV30/RV30 ratio: 0.00
+2025-04-27 22:04:29,903 - INFO - Pre-screening complete for EAT: FAILED
+2025-04-27 22:04:29,904 - INFO - Pre-screening FSBC...
+2025-04-27 22:04:29,905 - INFO - Analyzing metrics for FSBC
+2025-04-27 22:04:42,015 - INFO - FSBC 30-day avg volume: 87170
+2025-04-27 22:04:42,230 - ERROR - Not enough IV data points for term structure for FSBC
+2025-04-27 22:04:42,230 - INFO - Pre-screening SYY...
+2025-04-27 22:04:42,231 - INFO - Analyzing metrics for SYY
+2025-04-27 22:04:54,424 - INFO - SYY 30-day avg volume: 3430073
+2025-04-27 22:04:54,966 - INFO - SYY term structure slope (0-45): -0.000112
+2025-04-27 22:04:54,974 - INFO - SYY IV30/RV30 ratio: 0.02
+2025-04-27 22:04:54,975 - INFO - Pre-screening complete for SYY: FAILED
+2025-04-27 22:04:54,976 - INFO - Pre-screening UCTT...
+2025-04-27 22:04:54,977 - INFO - Analyzing metrics for UCTT
+2025-04-27 22:05:07,091 - INFO - UCTT 30-day avg volume: 547967
+2025-04-27 22:05:07,346 - INFO - UCTT term structure slope (0-45): -0.000014
+2025-04-27 22:05:07,350 - INFO - UCTT IV30/RV30 ratio: 0.00
+2025-04-27 22:05:07,351 - INFO - Pre-screening complete for UCTT: FAILED
+2025-04-27 22:05:07,351 - INFO - Pre-screening CVLT...
+2025-04-27 22:05:07,353 - INFO - Analyzing metrics for CVLT
+2025-04-27 22:05:19,464 - INFO - CVLT 30-day avg volume: 448297
+2025-04-27 22:05:19,927 - INFO - CVLT term structure slope (0-45): -0.000028
+2025-04-27 22:05:19,931 - INFO - CVLT IV30/RV30 ratio: 0.00
+2025-04-27 22:05:19,931 - INFO - Pre-screening complete for CVLT: FAILED
+2025-04-27 22:05:19,931 - INFO - Pre-screening RMBS...
+2025-04-27 22:05:19,932 - INFO - Analyzing metrics for RMBS
+2025-04-27 22:05:32,122 - INFO - RMBS 30-day avg volume: 1029117
+2025-04-27 22:05:32,528 - INFO - RMBS term structure slope (0-45): -0.000223
+2025-04-27 22:05:32,532 - INFO - RMBS IV30/RV30 ratio: 0.01
+2025-04-27 22:05:32,532 - INFO - Pre-screening complete for RMBS: FAILED
+2025-04-27 22:05:32,532 - INFO - Pre-screening AWI...
+2025-04-27 22:05:32,533 - INFO - Analyzing metrics for AWI
+2025-04-27 22:05:44,686 - INFO - AWI 30-day avg volume: 363523
+2025-04-27 22:05:44,923 - INFO - AWI term structure slope (0-45): 0.006829
+2025-04-27 22:05:44,927 - INFO - AWI IV30/RV30 ratio: 0.18
+2025-04-27 22:05:44,927 - INFO - Pre-screening complete for AWI: FAILED
+2025-04-27 22:05:44,927 - INFO - Pre-screening FELE...
+2025-04-27 22:05:44,928 - INFO - Analyzing metrics for FELE
+2025-04-27 22:05:57,128 - INFO - FELE 30-day avg volume: 341797
+2025-04-27 22:05:57,264 - INFO - FELE term structure slope (0-45): -0.005185
+2025-04-27 22:05:57,269 - INFO - FELE IV30/RV30 ratio: 0.62
+2025-04-27 22:05:57,270 - INFO - Pre-screening complete for FELE: FAILED
+2025-04-27 22:05:57,270 - INFO - Pre-screening THC...
+2025-04-27 22:05:57,272 - INFO - Analyzing metrics for THC
+2025-04-27 22:06:09,521 - INFO - THC 30-day avg volume: 1629883
+2025-04-27 22:06:12,261 - INFO - THC term structure slope (0-45): 0.000000
+2025-04-27 22:06:12,272 - INFO - THC IV30/RV30 ratio: 0.01
+2025-04-27 22:06:12,273 - INFO - Pre-screening complete for THC: FAILED
+2025-04-27 22:06:12,273 - INFO - Pre-screening GBFH...
+2025-04-27 22:06:12,274 - INFO - Analyzing metrics for GBFH
+2025-04-27 22:06:24,409 - INFO - GBFH 30-day avg volume: 15357
+2025-04-27 22:06:24,444 - ERROR - No options found for GBFH
+2025-04-27 22:06:24,445 - INFO - Pre-screening FCF...
+2025-04-27 22:06:24,446 - INFO - Analyzing metrics for FCF
+2025-04-27 22:06:36,652 - INFO - FCF 30-day avg volume: 1085303
+2025-04-27 22:06:36,829 - INFO - FCF term structure slope (0-45): -0.000000
+2025-04-27 22:06:36,834 - INFO - FCF IV30/RV30 ratio: 0.00
+2025-04-27 22:06:36,835 - INFO - Pre-screening complete for FCF: FAILED
+2025-04-27 22:06:36,836 - INFO - Pre-screening NVR...
+2025-04-27 22:06:36,837 - INFO - Analyzing metrics for NVR
+2025-04-27 22:06:48,960 - INFO - NVR 30-day avg volume: 25067
+2025-04-27 22:06:48,997 - ERROR - No options found for NVR
+2025-04-27 22:06:48,999 - INFO - Pre-screening WM...
+2025-04-27 22:06:49,000 - INFO - Analyzing metrics for WM
+2025-04-27 22:07:01,181 - INFO - WM 30-day avg volume: 1846287
+2025-04-27 22:07:01,753 - INFO - WM term structure slope (0-45): -0.000056
+2025-04-27 22:07:01,760 - INFO - WM IV30/RV30 ratio: 0.01
+2025-04-27 22:07:01,761 - INFO - Pre-screening complete for WM: FAILED
+2025-04-27 22:07:01,761 - INFO - Pre-screening CBU...
+2025-04-27 22:07:01,762 - INFO - Analyzing metrics for CBU
+2025-04-27 22:07:13,987 - INFO - CBU 30-day avg volume: 267027
+2025-04-27 22:07:14,160 - ERROR - Not enough IV data points for term structure for CBU
+2025-04-27 22:07:14,160 - INFO - Pre-screening BRO...
+2025-04-27 22:07:14,161 - INFO - Analyzing metrics for BRO
+2025-04-27 22:07:26,424 - INFO - BRO 30-day avg volume: 1904627
+2025-04-27 22:07:26,665 - INFO - BRO term structure slope (0-45): -0.000056
+2025-04-27 22:07:26,672 - INFO - BRO IV30/RV30 ratio: 0.01
+2025-04-27 22:07:26,673 - INFO - Pre-screening complete for BRO: FAILED
+2025-04-27 22:07:26,673 - INFO - Pre-screening NTRB...
+2025-04-27 22:07:26,674 - INFO - Analyzing metrics for NTRB
+2025-04-27 22:07:38,781 - INFO - NTRB 30-day avg volume: 12780
+2025-04-27 22:07:38,817 - ERROR - No options found for NTRB
+2025-04-27 22:07:38,818 - INFO - Pre-screening TZOO...
+2025-04-27 22:07:38,819 - INFO - Analyzing metrics for TZOO
+2025-04-27 22:07:51,008 - INFO - TZOO 30-day avg volume: 105533
+2025-04-27 22:07:51,258 - INFO - TZOO term structure slope (0-45): 0.000000
+2025-04-27 22:07:51,262 - INFO - TZOO IV30/RV30 ratio: 0.04
+2025-04-27 22:07:51,263 - INFO - Pre-screening complete for TZOO: FAILED
+2025-04-27 22:07:51,263 - INFO - Pre-screening CDP...
+2025-04-27 22:07:51,265 - INFO - Analyzing metrics for CDP
+2025-04-27 22:08:03,496 - INFO - CDP 30-day avg volume: 995733
+2025-04-27 22:08:03,721 - INFO - CDP term structure slope (0-45): 0.009954
+2025-04-27 22:08:03,725 - INFO - CDP IV30/RV30 ratio: 0.39
+2025-04-27 22:08:03,726 - INFO - Pre-screening complete for CDP: FAILED
+2025-04-27 22:08:03,726 - INFO - Pre-screening HOUS...
+2025-04-27 22:08:03,728 - INFO - Analyzing metrics for HOUS
+2025-04-27 22:08:15,836 - INFO - HOUS 30-day avg volume: 1173690
+2025-04-27 22:08:16,109 - INFO - HOUS term structure slope (0-45): -0.000893
+2025-04-27 22:08:16,115 - INFO - HOUS IV30/RV30 ratio: 0.06
+2025-04-27 22:08:16,117 - INFO - Pre-screening complete for HOUS: FAILED
+2025-04-27 22:08:16,118 - INFO - Pre-screening SPOT...
+2025-04-27 22:08:16,118 - INFO - Analyzing metrics for SPOT
+2025-04-27 22:08:28,227 - INFO - SPOT 30-day avg volume: 2444610
+2025-04-27 22:08:29,695 - INFO - SPOT term structure slope (0-45): 0.000238
+2025-04-27 22:08:29,703 - INFO - SPOT IV30/RV30 ratio: 0.01
+2025-04-27 22:08:29,704 - INFO - Pre-screening complete for SPOT: FAILED
+2025-04-27 22:08:29,704 - INFO - Pre-screening PFE...
+2025-04-27 22:08:29,705 - INFO - Analyzing metrics for PFE
+2025-04-27 22:08:41,917 - INFO - PFE 30-day avg volume: 60111730
+2025-04-27 22:08:43,070 - INFO - PFE term structure slope (0-45): -0.000146
+2025-04-27 22:08:43,074 - INFO - PFE IV30/RV30 ratio: 0.01
+2025-04-27 22:08:43,075 - INFO - Pre-screening complete for PFE: FAILED
+2025-04-27 22:08:43,076 - INFO - Pre-screening REGN...
+2025-04-27 22:08:43,077 - INFO - Analyzing metrics for REGN
+2025-04-27 22:08:55,189 - INFO - REGN 30-day avg volume: 1065480
+2025-04-27 22:08:56,280 - INFO - REGN term structure slope (0-45): -0.000181
+2025-04-27 22:08:56,286 - INFO - REGN IV30/RV30 ratio: 0.00
+2025-04-27 22:08:56,286 - INFO - Pre-screening complete for REGN: FAILED
+2025-04-27 22:08:56,287 - INFO - Pre-screening SOFI...
+2025-04-27 22:08:56,290 - INFO - Analyzing metrics for SOFI
+2025-04-27 22:09:08,426 - INFO - SOFI 30-day avg volume: 55024630
+2025-04-27 22:09:11,887 - INFO - SOFI term structure slope (0-45): -0.000230
+2025-04-27 22:09:11,898 - INFO - SOFI IV30/RV30 ratio: 0.01
+2025-04-27 22:09:11,898 - INFO - Pre-screening complete for SOFI: FAILED
+2025-04-27 22:09:11,899 - INFO - Pre-screening FISI...
+2025-04-27 22:09:11,900 - INFO - Analyzing metrics for FISI
+2025-04-27 22:09:24,105 - INFO - FISI 30-day avg volume: 222250
+2025-04-27 22:09:24,290 - ERROR - Not enough IV data points for term structure for FISI
+2025-04-27 22:09:24,291 - INFO - Pre-screening PII...
+2025-04-27 22:09:24,293 - INFO - Analyzing metrics for PII
+2025-04-27 22:09:36,511 - INFO - PII 30-day avg volume: 1740740
+2025-04-27 22:09:36,897 - INFO - PII term structure slope (0-45): -0.000223
+2025-04-27 22:09:36,903 - INFO - PII IV30/RV30 ratio: 0.02
+2025-04-27 22:09:36,903 - INFO - Pre-screening complete for PII: FAILED
+2025-04-27 22:09:36,904 - INFO - Pre-screening UPS...
+2025-04-27 22:09:36,904 - INFO - Analyzing metrics for UPS
+2025-04-27 22:09:49,086 - INFO - UPS 30-day avg volume: 6420983
+2025-04-27 22:09:50,071 - INFO - UPS term structure slope (0-45): 0.000029
+2025-04-27 22:09:50,076 - INFO - UPS IV30/RV30 ratio: 0.00
+2025-04-27 22:09:50,077 - INFO - Pre-screening complete for UPS: FAILED
+2025-04-27 22:09:50,077 - INFO - Pre-screening NE...
+2025-04-27 22:09:50,078 - INFO - Analyzing metrics for NE
+2025-04-27 22:10:02,219 - INFO - NE 30-day avg volume: 2810343
+2025-04-27 22:10:02,669 - INFO - NE term structure slope (0-45): -0.000446
+2025-04-27 22:10:02,676 - INFO - NE IV30/RV30 ratio: 0.03
+2025-04-27 22:10:02,677 - INFO - Pre-screening complete for NE: FAILED
+2025-04-27 22:10:02,677 - INFO - Pre-screening BRX...
+2025-04-27 22:10:02,678 - INFO - Analyzing metrics for BRX
+2025-04-27 22:10:14,833 - INFO - BRX 30-day avg volume: 2397460
+2025-04-27 22:10:15,021 - INFO - BRX term structure slope (0-45): 0.002879
+2025-04-27 22:10:15,029 - INFO - BRX IV30/RV30 ratio: 0.12
+2025-04-27 22:10:15,030 - INFO - Pre-screening complete for BRX: FAILED
+2025-04-27 22:10:15,030 - INFO - Pre-screening ARE...
+2025-04-27 22:10:15,031 - INFO - Analyzing metrics for ARE
+2025-04-27 22:10:27,219 - INFO - ARE 30-day avg volume: 1721713
+2025-04-27 22:10:27,489 - INFO - ARE term structure slope (0-45): 0.000112
+2025-04-27 22:10:27,496 - INFO - ARE IV30/RV30 ratio: 0.02
+2025-04-27 22:10:27,496 - INFO - Pre-screening complete for ARE: FAILED
+2025-04-27 22:10:27,496 - INFO - Pre-screening GM...
+2025-04-27 22:10:27,498 - INFO - Analyzing metrics for GM
+2025-04-27 22:10:39,637 - INFO - GM 30-day avg volume: 16403560
+2025-04-27 22:10:40,620 - INFO - GM term structure slope (0-45): -0.000089
+2025-04-27 22:10:40,627 - INFO - GM IV30/RV30 ratio: 0.00
+2025-04-27 22:10:40,628 - INFO - Pre-screening complete for GM: FAILED
+2025-04-27 22:10:40,629 - INFO - Pre-screening SEVN...
+2025-04-27 22:10:40,629 - INFO - Analyzing metrics for SEVN
+2025-04-27 22:10:52,800 - INFO - SEVN 30-day avg volume: 55653
+2025-04-27 22:10:53,021 - INFO - SEVN term structure slope (0-45): 0.003178
+2025-04-27 22:10:53,029 - INFO - SEVN IV30/RV30 ratio: 0.22
+2025-04-27 22:10:53,030 - INFO - Pre-screening complete for SEVN: FAILED
+2025-04-27 22:10:53,032 - INFO - Pre-screening WRLD...
+2025-04-27 22:10:53,033 - INFO - Analyzing metrics for WRLD
+2025-04-27 22:11:05,150 - INFO - WRLD 30-day avg volume: 30233
+2025-04-27 22:11:05,195 - ERROR - No options found for WRLD
+2025-04-27 22:11:05,196 - INFO - Pre-screening FOUR...
+2025-04-27 22:11:05,197 - INFO - Analyzing metrics for FOUR
+2025-04-27 22:11:17,317 - INFO - FOUR 30-day avg volume: 1710833
+2025-04-27 22:11:17,845 - INFO - FOUR term structure slope (0-45): 0.000000
+2025-04-27 22:11:17,850 - INFO - FOUR IV30/RV30 ratio: 0.00
+2025-04-27 22:11:17,851 - INFO - Pre-screening complete for FOUR: FAILED
+2025-04-27 22:11:17,851 - INFO - Pre-screening AROW...
+2025-04-27 22:11:17,852 - INFO - Analyzing metrics for AROW
+2025-04-27 22:11:30,112 - INFO - AROW 30-day avg volume: 47650
+2025-04-27 22:11:30,296 - INFO - AROW term structure slope (0-45): -0.000000
+2025-04-27 22:11:30,302 - INFO - AROW IV30/RV30 ratio: 0.01
+2025-04-27 22:11:30,303 - INFO - Pre-screening complete for AROW: FAILED
+2025-04-27 22:11:30,303 - INFO - Pre-screening LGIH...
+2025-04-27 22:11:30,304 - INFO - Analyzing metrics for LGIH
+2025-04-27 22:11:42,414 - INFO - LGIH 30-day avg volume: 335490
+2025-04-27 22:11:42,719 - INFO - LGIH term structure slope (0-45): 0.001562
+2025-04-27 22:11:42,726 - INFO - LGIH IV30/RV30 ratio: 0.04
+2025-04-27 22:11:42,727 - INFO - Pre-screening complete for LGIH: FAILED
+2025-04-27 22:11:42,727 - INFO - Pre-screening HMST...
+2025-04-27 22:11:42,728 - INFO - Analyzing metrics for HMST
+2025-04-27 22:11:54,871 - INFO - HMST 30-day avg volume: 246380
+2025-04-27 22:11:55,062 - INFO - HMST term structure slope (0-45): 0.009162
+2025-04-27 22:11:55,066 - INFO - HMST IV30/RV30 ratio: 0.14
+2025-04-27 22:11:55,067 - INFO - Pre-screening complete for HMST: FAILED
+2025-04-27 22:11:55,067 - INFO - Pre-screening UFPI...
+2025-04-27 22:11:55,068 - INFO - Analyzing metrics for UFPI
+2025-04-27 22:12:07,264 - INFO - UFPI 30-day avg volume: 505560
+2025-04-27 22:12:07,444 - INFO - UFPI term structure slope (0-45): -0.000062
+2025-04-27 22:12:07,448 - INFO - UFPI IV30/RV30 ratio: 0.02
+2025-04-27 22:12:07,449 - INFO - Pre-screening complete for UFPI: FAILED
+2025-04-27 22:12:07,449 - INFO - Pre-screening TRS...
+2025-04-27 22:12:07,451 - INFO - Analyzing metrics for TRS
+2025-04-27 22:12:19,610 - INFO - TRS 30-day avg volume: 404203
+2025-04-27 22:12:19,861 - INFO - TRS term structure slope (0-45): -0.000000
+2025-04-27 22:12:19,868 - INFO - TRS IV30/RV30 ratio: 0.02
+2025-04-27 22:12:19,869 - INFO - Pre-screening complete for TRS: FAILED
+2025-04-27 22:12:19,869 - INFO - Pre-screening HRZN...
+2025-04-27 22:12:19,870 - INFO - Analyzing metrics for HRZN
+2025-04-27 22:12:32,030 - INFO - HRZN 30-day avg volume: 365143
+2025-04-27 22:12:32,279 - INFO - HRZN term structure slope (0-45): -0.000992
+2025-04-27 22:12:32,285 - INFO - HRZN IV30/RV30 ratio: 0.28
+2025-04-27 22:12:32,286 - INFO - Pre-screening complete for HRZN: FAILED
+2025-04-27 22:12:32,286 - INFO - Pre-screening NUE...
+2025-04-27 22:12:32,287 - INFO - Analyzing metrics for NUE
+2025-04-27 22:12:44,515 - INFO - NUE 30-day avg volume: 2789970
+2025-04-27 22:12:45,480 - INFO - NUE term structure slope (0-45): -0.000002
+2025-04-27 22:12:45,487 - INFO - NUE IV30/RV30 ratio: 0.01
+2025-04-27 22:12:45,488 - INFO - Pre-screening complete for NUE: FAILED
+2025-04-27 22:12:45,488 - INFO - Pre-screening ALLGF...
+2025-04-27 22:12:45,490 - INFO - Analyzing metrics for ALLGF
+2025-04-27 22:12:57,616 - INFO - ALLGF 30-day avg volume: 280
+2025-04-27 22:12:57,653 - ERROR - No options found for ALLGF
+2025-04-27 22:12:57,654 - INFO - Pre-screening SFD...
+2025-04-27 22:12:57,656 - INFO - Analyzing metrics for SFD
+2025-04-27 22:13:11,593 - INFO - SFD 30-day avg volume: 752700
+2025-04-27 22:13:11,644 - ERROR - No options found for SFD
+2025-04-27 22:13:11,645 - INFO - Pre-screening KFRC...
+2025-04-27 22:13:11,646 - INFO - Analyzing metrics for KFRC
+2025-04-27 22:13:23,793 - INFO - KFRC 30-day avg volume: 144037
+2025-04-27 22:13:23,995 - INFO - KFRC term structure slope (0-45): 0.008580
+2025-04-27 22:13:24,008 - INFO - KFRC IV30/RV30 ratio: 0.48
+2025-04-27 22:13:24,010 - INFO - Pre-screening complete for KFRC: FAILED
+2025-04-27 22:13:24,011 - INFO - Pre-screening SSKN...
+2025-04-27 22:13:24,012 - INFO - Analyzing metrics for SSKN
+2025-04-27 22:13:36,121 - INFO - SSKN 30-day avg volume: 1830
+2025-04-27 22:13:36,172 - ERROR - No options found for SSKN
+2025-04-27 22:13:36,173 - INFO - Pre-screening SBSI...
+2025-04-27 22:13:36,174 - INFO - Analyzing metrics for SBSI
+2025-04-27 22:13:48,363 - INFO - SBSI 30-day avg volume: 148710
+2025-04-27 22:13:48,584 - INFO - SBSI term structure slope (0-45): -0.014909
+2025-04-27 22:13:48,590 - INFO - SBSI IV30/RV30 ratio: 2.99
+2025-04-27 22:13:48,591 - INFO - Pre-screening complete for SBSI: FAILED
+2025-04-27 22:13:48,591 - INFO - Pre-screening LH...
+2025-04-27 22:13:48,592 - INFO - Analyzing metrics for LH
+2025-04-27 22:14:00,793 - INFO - LH 30-day avg volume: 810047
+2025-04-27 22:14:01,044 - INFO - LH term structure slope (0-45): -0.000056
+2025-04-27 22:14:01,050 - INFO - LH IV30/RV30 ratio: 0.01
+2025-04-27 22:14:01,051 - INFO - Pre-screening complete for LH: FAILED
+2025-04-27 22:14:01,051 - INFO - Pre-screening SHW...
+2025-04-27 22:14:01,053 - INFO - Analyzing metrics for SHW
+2025-04-27 22:14:13,273 - INFO - SHW 30-day avg volume: 1987500
+2025-04-27 22:14:13,870 - INFO - SHW term structure slope (0-45): -0.000056
+2025-04-27 22:14:13,875 - INFO - SHW IV30/RV30 ratio: 0.01
+2025-04-27 22:14:13,876 - INFO - Pre-screening complete for SHW: FAILED
+2025-04-27 22:14:13,877 - INFO - Pre-screening RBB...
+2025-04-27 22:14:13,877 - INFO - Analyzing metrics for RBB
+2025-04-27 22:14:26,009 - INFO - RBB 30-day avg volume: 32573
+2025-04-27 22:14:26,187 - ERROR - Could not determine ATM IV for any expiration dates for RBB
+2025-04-27 22:14:26,188 - INFO - Pre-screening BYON...
+2025-04-27 22:14:26,191 - INFO - Analyzing metrics for BYON
+2025-04-27 22:14:38,301 - INFO - BYON 30-day avg volume: 3128343
+2025-04-27 22:14:38,909 - INFO - BYON term structure slope (0-45): 0.000279
+2025-04-27 22:14:38,913 - INFO - BYON IV30/RV30 ratio: 0.01
+2025-04-27 22:14:38,914 - INFO - Pre-screening complete for BYON: FAILED
+2025-04-27 22:14:38,915 - INFO - Pre-screening TWO...
+2025-04-27 22:14:38,916 - INFO - Analyzing metrics for TWO
+2025-04-27 22:14:51,059 - INFO - TWO 30-day avg volume: 1715883
+2025-04-27 22:14:51,307 - INFO - TWO term structure slope (0-45): -0.000223
+2025-04-27 22:14:51,319 - INFO - TWO IV30/RV30 ratio: 0.02
+2025-04-27 22:14:51,324 - INFO - Pre-screening complete for TWO: FAILED
+2025-04-27 22:14:51,325 - INFO - Pre-screening ZBRA...
+2025-04-27 22:14:51,327 - INFO - Analyzing metrics for ZBRA
+2025-04-27 22:15:03,470 - INFO - ZBRA 30-day avg volume: 678843
+2025-04-27 22:15:03,749 - INFO - ZBRA term structure slope (0-45): 0.001674
+2025-04-27 22:15:03,756 - INFO - ZBRA IV30/RV30 ratio: 0.04
+2025-04-27 22:15:03,756 - INFO - Pre-screening complete for ZBRA: FAILED
+2025-04-27 22:15:03,757 - INFO - Pre-screening PDM...
+2025-04-27 22:15:03,758 - INFO - Analyzing metrics for PDM
+2025-04-27 22:15:15,937 - INFO - PDM 30-day avg volume: 859220
+2025-04-27 22:15:16,110 - INFO - PDM term structure slope (0-45): -0.000000
+2025-04-27 22:15:16,121 - INFO - PDM IV30/RV30 ratio: 0.06
+2025-04-27 22:15:16,121 - INFO - Pre-screening complete for PDM: FAILED
+2025-04-27 22:15:16,122 - INFO - Pre-screening RCL...
+2025-04-27 22:15:16,123 - INFO - Analyzing metrics for RCL
+2025-04-27 22:15:28,330 - INFO - RCL 30-day avg volume: 2764423
+2025-04-27 22:15:29,525 - INFO - RCL term structure slope (0-45): 0.000000
+2025-04-27 22:15:29,532 - INFO - RCL IV30/RV30 ratio: 0.01
+2025-04-27 22:15:29,537 - INFO - Pre-screening complete for RCL: FAILED
+2025-04-27 22:15:29,538 - INFO - Pre-screening RIG...
+2025-04-27 22:15:29,539 - INFO - Analyzing metrics for RIG
+2025-04-27 22:15:41,752 - INFO - RIG 30-day avg volume: 43168663
+2025-04-27 22:15:42,421 - INFO - RIG term structure slope (0-45): -0.001060
+2025-04-27 22:15:42,427 - INFO - RIG IV30/RV30 ratio: 0.04
+2025-04-27 22:15:42,428 - INFO - Pre-screening complete for RIG: FAILED
+2025-04-27 22:15:42,428 - INFO - Pre-screening CR...
+2025-04-27 22:15:42,430 - INFO - Analyzing metrics for CR
+2025-04-27 22:15:54,562 - INFO - CR 30-day avg volume: 404710
+2025-04-27 22:15:54,812 - INFO - CR term structure slope (0-45): 0.009199
+2025-04-27 22:15:54,821 - INFO - CR IV30/RV30 ratio: 0.18
+2025-04-27 22:15:54,822 - INFO - Pre-screening complete for CR: FAILED
+2025-04-27 22:15:54,822 - INFO - Pre-screening HON...
+2025-04-27 22:15:54,823 - INFO - Analyzing metrics for HON
+2025-04-27 22:16:07,188 - INFO - HON 30-day avg volume: 4842103
+2025-04-27 22:16:08,108 - INFO - HON term structure slope (0-45): 0.001426
+2025-04-27 22:16:08,116 - INFO - HON IV30/RV30 ratio: 0.01
+2025-04-27 22:16:08,117 - INFO - Pre-screening complete for HON: FAILED
+2025-04-27 22:16:08,117 - INFO - Pre-screening SANM...
+2025-04-27 22:16:08,118 - INFO - Analyzing metrics for SANM
+2025-04-27 22:16:20,228 - INFO - SANM 30-day avg volume: 392863
+2025-04-27 22:16:20,519 - INFO - SANM term structure slope (0-45): 0.002201
+2025-04-27 22:16:20,525 - INFO - SANM IV30/RV30 ratio: 0.07
+2025-04-27 22:16:20,526 - INFO - Pre-screening complete for SANM: FAILED
+2025-04-27 22:16:20,526 - INFO - Pre-screening FBRT...
+2025-04-27 22:16:20,527 - INFO - Analyzing metrics for FBRT
+2025-04-27 22:16:32,655 - INFO - FBRT 30-day avg volume: 557100
+2025-04-27 22:16:32,986 - INFO - FBRT term structure slope (0-45): -0.009668
+2025-04-27 22:16:32,993 - INFO - FBRT IV30/RV30 ratio: 0.85
+2025-04-27 22:16:32,994 - INFO - Pre-screening complete for FBRT: FAILED
+2025-04-27 22:16:32,994 - INFO - Pre-screening MED...
+2025-04-27 22:16:32,995 - INFO - Analyzing metrics for MED
+2025-04-27 22:16:45,128 - INFO - MED 30-day avg volume: 225437
+2025-04-27 22:16:45,379 - INFO - MED term structure slope (0-45): 0.000000
+2025-04-27 22:16:45,385 - INFO - MED IV30/RV30 ratio: 0.02
+2025-04-27 22:16:45,386 - INFO - Pre-screening complete for MED: FAILED
+2025-04-27 22:16:45,386 - INFO - Pre-screening SCL...
+2025-04-27 22:16:45,387 - INFO - Analyzing metrics for SCL
+2025-04-27 22:16:57,654 - INFO - SCL 30-day avg volume: 151500
+2025-04-27 22:16:57,867 - INFO - SCL term structure slope (0-45): 0.007408
+2025-04-27 22:16:57,872 - INFO - SCL IV30/RV30 ratio: 0.34
+2025-04-27 22:16:57,872 - INFO - Pre-screening complete for SCL: FAILED
+2025-04-27 22:16:57,873 - INFO - Pre-screening HLMN...
+2025-04-27 22:16:57,874 - INFO - Analyzing metrics for HLMN
+2025-04-27 22:17:11,038 - INFO - HLMN 30-day avg volume: 1609783
+2025-04-27 22:17:11,426 - INFO - HLMN term structure slope (0-45): -0.000000
+2025-04-27 22:17:11,434 - INFO - HLMN IV30/RV30 ratio: 0.00
+2025-04-27 22:17:11,435 - INFO - Pre-screening complete for HLMN: FAILED
+2025-04-27 22:17:11,435 - INFO - Pre-screening BCAL...
+2025-04-27 22:17:11,436 - INFO - Analyzing metrics for BCAL
+2025-04-27 22:17:23,545 - INFO - BCAL 30-day avg volume: 127203
+2025-04-27 22:17:23,579 - ERROR - No options found for BCAL
+2025-04-27 22:17:23,580 - INFO - Pre-screening OPCH...
+2025-04-27 22:17:23,581 - INFO - Analyzing metrics for OPCH
+2025-04-27 22:17:35,691 - INFO - OPCH 30-day avg volume: 2040063
+2025-04-27 22:17:36,013 - INFO - OPCH term structure slope (0-45): -0.000112
+2025-04-27 22:17:36,021 - INFO - OPCH IV30/RV30 ratio: 0.02
+2025-04-27 22:17:36,022 - INFO - Pre-screening complete for OPCH: FAILED
+2025-04-27 22:17:36,022 - INFO - Pre-screening SEI...
+2025-04-27 22:17:36,024 - INFO - Analyzing metrics for SEI
+2025-04-27 22:17:48,170 - INFO - SEI 30-day avg volume: 1653933
+2025-04-27 22:17:48,434 - INFO - SEI term structure slope (0-45): -0.000446
+2025-04-27 22:17:48,447 - INFO - SEI IV30/RV30 ratio: 0.02
+2025-04-27 22:17:48,447 - INFO - Pre-screening complete for SEI: FAILED
+2025-04-27 22:17:48,448 - INFO - Pre-screening EPD...
+2025-04-27 22:17:48,449 - INFO - Analyzing metrics for EPD
+2025-04-27 22:18:00,624 - INFO - EPD 30-day avg volume: 5827860
+2025-04-27 22:18:01,417 - INFO - EPD term structure slope (0-45): -0.000098
+2025-04-27 22:18:01,423 - INFO - EPD IV30/RV30 ratio: 0.01
+2025-04-27 22:18:01,424 - INFO - Pre-screening complete for EPD: FAILED
+2025-04-27 22:18:01,424 - INFO - Pre-screening NOV...
+2025-04-27 22:18:01,426 - INFO - Analyzing metrics for NOV
+2025-04-27 22:18:13,566 - INFO - NOV 30-day avg volume: 5082640
+2025-04-27 22:18:13,883 - INFO - NOV term structure slope (0-45): 0.000000
+2025-04-27 22:18:13,888 - INFO - NOV IV30/RV30 ratio: 0.02
+2025-04-27 22:18:13,888 - INFO - Pre-screening complete for NOV: FAILED
+2025-04-27 22:18:13,889 - INFO - Pre-screening AMKR...
+2025-04-27 22:18:13,890 - INFO - Analyzing metrics for AMKR
+2025-04-27 22:18:26,021 - INFO - AMKR 30-day avg volume: 3089170
+2025-04-27 22:18:26,686 - INFO - AMKR term structure slope (0-45): -0.000391
+2025-04-27 22:18:26,694 - INFO - AMKR IV30/RV30 ratio: 0.01
+2025-04-27 22:18:26,695 - INFO - Pre-screening complete for AMKR: FAILED
+2025-04-27 22:18:26,695 - INFO - Pre-screening PJT...
+2025-04-27 22:18:26,696 - INFO - Analyzing metrics for PJT
+2025-04-27 22:18:38,828 - INFO - PJT 30-day avg volume: 321807
+2025-04-27 22:18:39,115 - INFO - PJT term structure slope (0-45): -0.000028
+2025-04-27 22:18:39,125 - INFO - PJT IV30/RV30 ratio: 0.00
+2025-04-27 22:18:39,126 - INFO - Pre-screening complete for PJT: FAILED
+2025-04-27 22:18:39,126 - INFO - Pre-screening WWD...
+2025-04-27 22:18:39,127 - INFO - Analyzing metrics for WWD
+2025-04-27 22:18:51,321 - INFO - WWD 30-day avg volume: 553947
+2025-04-27 22:18:51,632 - INFO - WWD term structure slope (0-45): -0.000223
+2025-04-27 22:18:51,637 - INFO - WWD IV30/RV30 ratio: 0.01
+2025-04-27 22:18:51,640 - INFO - Pre-screening complete for WWD: FAILED
+2025-04-27 22:18:51,642 - INFO - Pre-screening SMBC...
+2025-04-27 22:18:51,644 - INFO - Analyzing metrics for SMBC
+2025-04-27 22:19:03,843 - INFO - SMBC 30-day avg volume: 27943
+2025-04-27 22:19:04,053 - INFO - SMBC term structure slope (0-45): 0.006892
+2025-04-27 22:19:04,060 - INFO - SMBC IV30/RV30 ratio: 0.41
+2025-04-27 22:19:04,060 - INFO - Pre-screening complete for SMBC: FAILED
+2025-04-27 22:19:04,061 - INFO - Pre-screening FFIV...
+2025-04-27 22:19:04,062 - INFO - Analyzing metrics for FFIV
+2025-04-27 22:19:16,235 - INFO - FFIV 30-day avg volume: 562417
+2025-04-27 22:19:16,648 - INFO - FFIV term structure slope (0-45): 0.000889
+2025-04-27 22:19:16,654 - INFO - FFIV IV30/RV30 ratio: 0.02
+2025-04-27 22:19:16,655 - INFO - Pre-screening complete for FFIV: FAILED
+2025-04-27 22:19:16,655 - INFO - Pre-screening APM...
+2025-04-27 22:19:16,657 - INFO - Analyzing metrics for APM
+2025-04-27 22:19:28,767 - INFO - APM 30-day avg volume: 103500
+2025-04-27 22:19:28,802 - ERROR - No options found for APM
+2025-04-27 22:19:28,802 - INFO - Pre-screening KHC...
+2025-04-27 22:19:28,804 - INFO - Analyzing metrics for KHC
+2025-04-27 22:19:40,962 - INFO - KHC 30-day avg volume: 11072223
+2025-04-27 22:19:41,861 - INFO - KHC term structure slope (0-45): 0.000548
+2025-04-27 22:19:41,865 - INFO - KHC IV30/RV30 ratio: 0.03
+2025-04-27 22:19:41,866 - INFO - Pre-screening complete for KHC: FAILED
+2025-04-27 22:19:41,866 - INFO - Pre-screening HLIT...
+2025-04-27 22:19:41,867 - INFO - Analyzing metrics for HLIT
+2025-04-27 22:19:54,015 - INFO - HLIT 30-day avg volume: 1102750
+2025-04-27 22:19:54,233 - INFO - HLIT term structure slope (0-45): 0.009654
+2025-04-27 22:19:54,242 - INFO - HLIT IV30/RV30 ratio: 0.32
+2025-04-27 22:19:54,242 - INFO - Pre-screening complete for HLIT: FAILED
+2025-04-27 22:19:54,243 - INFO - Pre-screening KO...
+2025-04-27 22:19:54,244 - INFO - Analyzing metrics for KO
+2025-04-27 22:20:06,540 - INFO - KO 30-day avg volume: 18954210
+2025-04-27 22:20:07,706 - INFO - KO term structure slope (0-45): 0.000002
+2025-04-27 22:20:07,713 - INFO - KO IV30/RV30 ratio: 0.00
+2025-04-27 22:20:07,714 - INFO - Pre-screening complete for KO: FAILED
+2025-04-27 22:20:07,714 - INFO - Pre-screening PYPL...
+2025-04-27 22:20:07,715 - INFO - Analyzing metrics for PYPL
+2025-04-27 22:20:19,840 - INFO - PYPL 30-day avg volume: 11358930
+2025-04-27 22:20:21,263 - INFO - PYPL term structure slope (0-45): -0.000146
+2025-04-27 22:20:21,272 - INFO - PYPL IV30/RV30 ratio: 0.01
+2025-04-27 22:20:21,272 - INFO - Pre-screening complete for PYPL: FAILED
+2025-04-27 22:20:21,274 - INFO - Pre-screening ABCB...
+2025-04-27 22:20:21,275 - INFO - Analyzing metrics for ABCB
+2025-04-27 22:20:33,468 - INFO - ABCB 30-day avg volume: 505463
+2025-04-27 22:20:33,726 - INFO - ABCB term structure slope (0-45): 0.000446
+2025-04-27 22:20:33,730 - INFO - ABCB IV30/RV30 ratio: 0.04
+2025-04-27 22:20:33,730 - INFO - Pre-screening complete for ABCB: FAILED
+2025-04-27 22:20:33,731 - INFO - Pre-screening EFSC...
+2025-04-27 22:20:33,732 - INFO - Analyzing metrics for EFSC
+2025-04-27 22:20:45,905 - INFO - EFSC 30-day avg volume: 321350
+2025-04-27 22:20:46,085 - INFO - EFSC term structure slope (0-45): -0.004994
+2025-04-27 22:20:46,092 - INFO - EFSC IV30/RV30 ratio: 0.80
+2025-04-27 22:20:46,092 - INFO - Pre-screening complete for EFSC: FAILED
+2025-04-27 22:20:46,093 - INFO - Pre-screening ASTE...
+2025-04-27 22:20:46,093 - INFO - Analyzing metrics for ASTE
+2025-04-27 22:20:58,270 - INFO - ASTE 30-day avg volume: 138240
+2025-04-27 22:20:58,527 - INFO - ASTE term structure slope (0-45): 0.005967
+2025-04-27 22:20:58,534 - INFO - ASTE IV30/RV30 ratio: 0.32
+2025-04-27 22:20:58,535 - INFO - Pre-screening complete for ASTE: FAILED
+2025-04-27 22:20:58,537 - INFO - Pre-screening NSP...
+2025-04-27 22:20:58,538 - INFO - Analyzing metrics for NSP
+2025-04-27 22:21:11,899 - INFO - NSP 30-day avg volume: 454263
+2025-04-27 22:21:12,165 - INFO - NSP term structure slope (0-45): 0.000670
+2025-04-27 22:21:12,173 - INFO - NSP IV30/RV30 ratio: 0.04
+2025-04-27 22:21:12,174 - INFO - Pre-screening complete for NSP: FAILED
+2025-04-27 22:21:12,175 - INFO - Pre-screening AOS...
+2025-04-27 22:21:12,175 - INFO - Analyzing metrics for AOS
+2025-04-27 22:21:24,411 - INFO - AOS 30-day avg volume: 1543283
+2025-04-27 22:21:24,659 - INFO - AOS term structure slope (0-45): -0.000003
+2025-04-27 22:21:24,670 - INFO - AOS IV30/RV30 ratio: 0.00
+2025-04-27 22:21:24,670 - INFO - Pre-screening complete for AOS: FAILED
+2025-04-27 22:21:24,671 - INFO - Pre-screening PCH...
+2025-04-27 22:21:24,671 - INFO - Analyzing metrics for PCH
+2025-04-27 22:21:36,945 - INFO - PCH 30-day avg volume: 500277
+2025-04-27 22:21:37,178 - INFO - PCH term structure slope (0-45): -0.000086
+2025-04-27 22:21:37,187 - INFO - PCH IV30/RV30 ratio: 0.03
+2025-04-27 22:21:37,187 - INFO - Pre-screening complete for PCH: FAILED
+2025-04-27 22:21:37,188 - INFO - Pre-screening JBLU...
+2025-04-27 22:21:37,189 - INFO - Analyzing metrics for JBLU
+2025-04-27 22:21:49,317 - INFO - JBLU 30-day avg volume: 27626010
+2025-04-27 22:21:50,053 - INFO - JBLU term structure slope (0-45): -0.001172
+2025-04-27 22:21:50,058 - INFO - JBLU IV30/RV30 ratio: 0.02
+2025-04-27 22:21:50,059 - INFO - Pre-screening complete for JBLU: FAILED
+2025-04-27 22:21:50,060 - INFO - Pre-screening SJW...
+2025-04-27 22:21:50,060 - INFO - Analyzing metrics for SJW
+2025-04-27 22:22:02,276 - INFO - SJW 30-day avg volume: 284513
+2025-04-27 22:22:02,519 - INFO - SJW term structure slope (0-45): 0.016605
+2025-04-27 22:22:02,523 - INFO - SJW IV30/RV30 ratio: 0.67
+2025-04-27 22:22:02,524 - INFO - Pre-screening complete for SJW: FAILED
+2025-04-27 22:22:02,524 - INFO - Pre-screening NWBI...
+2025-04-27 22:22:02,525 - INFO - Analyzing metrics for NWBI
+2025-04-27 22:22:14,713 - INFO - NWBI 30-day avg volume: 913163
+2025-04-27 22:22:14,952 - INFO - NWBI term structure slope (0-45): -0.000172
+2025-04-27 22:22:14,959 - INFO - NWBI IV30/RV30 ratio: 0.07
+2025-04-27 22:22:14,961 - INFO - Pre-screening complete for NWBI: FAILED
+2025-04-27 22:22:14,974 - INFO - Pre-screening complete. 0 of 140 symbols passed criteria.
+2025-04-27 22:22:14,975 - INFO - Pre-screening complete
+2025-04-27 22:22:14,976 - INFO - Disconnecting from 127.0.0.1:7497, 710 B sent in 9 messages, 24.0 kB received in 534 messages, session time 1.78 ks.
+2025-04-27 22:22:14,976 - INFO - Disconnecting
+2025-04-28 19:07:45,913 - INFO - Watchdog monitoring started
+2025-04-28 19:07:46,061 - INFO - Scheduled daily report for 2025-04-29 20:00:00 ET
+2025-04-28 19:07:46,063 - INFO - (78734 seconds from now)
+2025-04-28 19:07:46,361 - ERROR - Error checking market holidays: 'str' object has no attribute 'get'
+2025-04-28 19:07:46,363 - INFO - Connecting to IBKR at 127.0.0.1:7497 with client ID 1
+2025-04-28 19:07:46,364 - INFO - Connecting to 127.0.0.1:7497 with clientId 1...
+2025-04-28 19:07:46,366 - INFO - Connected
+2025-04-28 19:07:46,372 - INFO - Logged on to server version 176
+2025-04-28 19:07:46,378 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm.nj
+2025-04-28 19:07:46,378 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfuture
+2025-04-28 19:07:46,379 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:cashfarm
+2025-04-28 19:07:46,380 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm
+2025-04-28 19:07:46,381 - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:ushmds
+2025-04-28 19:07:46,381 - INFO - Warning 2158, reqId -1: Sec-def data farm connection is OK:secdefil
+2025-04-28 19:07:46,382 - INFO - API connection ready
+2025-04-28 19:07:46,511 - INFO - Synchronization complete
+2025-04-28 19:07:46,512 - INFO - Successfully connected to IBKR
+2025-04-28 19:07:46,616 - WARNING - WARNING: Connected to LIVE trading account!
+2025-04-28 19:07:46,862 - INFO - Market is currently CLOSED
+2025-04-28 19:07:47,147 - ERROR - Error checking market holidays: 'str' object has no attribute 'get'
+2025-04-28 19:07:47,147 - INFO - Today (2025-04-28): Trading day: Yes
+2025-04-28 19:07:47,148 - INFO - Next trading day: 2025-04-29
+2025-04-28 19:07:47,148 - INFO - Running in pre-screening mode
+2025-04-28 19:07:47,149 - INFO - Starting early pre-screening of earnings symbols
+2025-04-28 19:07:47,398 - ERROR - Error checking market holidays: 'str' object has no attribute 'get'
+2025-04-28 19:07:48,616 - INFO - Found 138 potential earnings plays: NUE, WWD, HRZN, UAN, TRS, ECL, EFTR, CNO, EPD, PII, ARCC, BALY, RCL, LGIH, CINF, SMBC, CCK, FISI, CBU, TER, AROW, ASTE, CWK, SBAC, CLVT, JBLU, OPCH, NOV, RBB, NEO, EFSC, CVI, SBUX, SOFI, SYY, HOUS, INCY, MED, CECO, GABC, SEVN, FFIV, GM, SANM, UHT, UFPI, ALLGF, SCL, KFRC, SFD, TWO, FCF, PYPL, AMKR, UCTT, FOUR, REGN, CDP, ICDIQ, PUMP, PJT, SEI, SPOT, NSP, ABCB, HLT, ALRS, GLW, PCH, RBOT, WRLD, CDNS, WELL, FSBC, LH, HTLD, SPGI, ARE, RMBS, XYL, PFE, MO, LEG, UPS, BRX, KHC, FPAY, DEA, SJW, NXRT, NTRB, NVR, AOS, NXPI, CR, THC, SBSI, KO, APM, OMF, HMST, RIG, AWI, RGEN, SHW, WM, CVLT, HLIT, ZBRA, NE, FBRT, PCAR, EAT, SSKN, MLI, PDM, BRO, NWBI, AMT, HLMN, UHS, ARCB, BYON, AOREF, FELE, ETR, HON, NTST, FSFG, FSUN, NAUT, BCAL, TZOO, EZPW, ABG, NARI, SSD, FPI
+2025-04-28 19:07:48,627 - INFO - Pre-screening NUE...
+2025-04-28 19:07:48,628 - INFO - Analyzing metrics for NUE
+2025-04-28 19:08:01,016 - INFO - NUE 30-day avg volume: 2794990
+2025-04-28 19:08:01,853 - INFO - NUE term structure slope (0-45): -0.005172
+2025-04-28 19:08:01,861 - INFO - NUE IV30/RV30 ratio: 0.81
+2025-04-28 19:08:01,861 - INFO - Pre-screening complete for NUE: FAILED
+2025-04-28 19:08:01,862 - INFO - Pre-screening WWD...
+2025-04-28 19:08:01,863 - INFO - Analyzing metrics for WWD
+2025-04-28 19:08:13,965 - INFO - WWD 30-day avg volume: 572447
+2025-04-28 19:08:14,268 - INFO - WWD term structure slope (0-45): -0.001889
+2025-04-28 19:08:14,274 - INFO - WWD IV30/RV30 ratio: 0.88
+2025-04-28 19:08:14,275 - INFO - Pre-screening complete for WWD: FAILED
+2025-04-28 19:08:14,275 - INFO - Pre-screening HRZN...
+2025-04-28 19:08:14,276 - INFO - Analyzing metrics for HRZN
+2025-04-28 19:08:26,369 - INFO - HRZN 30-day avg volume: 363107
+2025-04-28 19:08:26,583 - INFO - HRZN term structure slope (0-45): -0.003224
+2025-04-28 19:08:26,593 - INFO - HRZN IV30/RV30 ratio: 1.45
+2025-04-28 19:08:26,594 - INFO - Pre-screening complete for HRZN: FAILED
+2025-04-28 19:08:26,595 - INFO - Pre-screening UAN...
+2025-04-28 19:08:26,595 - INFO - Analyzing metrics for UAN
+2025-04-28 19:08:38,698 - INFO - UAN 30-day avg volume: 31343
+2025-04-28 19:08:38,994 - INFO - UAN term structure slope (0-45): -0.005333
+2025-04-28 19:08:38,999 - INFO - UAN IV30/RV30 ratio: 1.53
+2025-04-28 19:08:38,999 - INFO - Pre-screening complete for UAN: FAILED
+2025-04-28 19:08:38,999 - INFO - Pre-screening TRS...
+2025-04-28 19:08:39,000 - INFO - Analyzing metrics for TRS
+2025-04-28 19:08:51,093 - INFO - TRS 30-day avg volume: 418587
+2025-04-28 19:08:51,301 - INFO - TRS term structure slope (0-45): -0.000000
+2025-04-28 19:08:51,309 - INFO - TRS IV30/RV30 ratio: 1.12
+2025-04-28 19:08:51,309 - INFO - Pre-screening complete for TRS: FAILED
+2025-04-28 19:08:51,310 - INFO - Pre-screening ECL...
+2025-04-28 19:08:51,312 - INFO - Analyzing metrics for ECL
+2025-04-28 19:09:03,449 - INFO - ECL 30-day avg volume: 1506667
+2025-04-28 19:09:03,780 - INFO - ECL term structure slope (0-45): -0.002441
+2025-04-28 19:09:03,784 - INFO - ECL IV30/RV30 ratio: 1.06
+2025-04-28 19:09:03,785 - INFO - Pre-screening complete for ECL: FAILED
+2025-04-28 19:09:03,786 - INFO - Pre-screening EFTR...
+2025-04-28 19:09:03,787 - INFO - Analyzing metrics for EFTR
+2025-04-28 19:09:15,855 - INFO - EFTR 30-day avg volume: 1140
+2025-04-28 19:09:15,889 - ERROR - No options found for EFTR
+2025-04-28 19:09:15,890 - INFO - Pre-screening CNO...
+2025-04-28 19:09:15,891 - INFO - Analyzing metrics for CNO
+2025-04-28 19:09:25,811 - INFO - Bot manually interrupted
+2025-04-28 19:09:25,866 - INFO - Disconnecting from 127.0.0.1:7497, 710 B sent in 9 messages, 23.9 kB received in 529 messages, session time 99.5 s.
+2025-04-28 19:09:25,870 - INFO - Disconnecting
+2025-04-28 19:09:41,729 - INFO - Watchdog monitoring started
+2025-04-28 19:09:41,873 - INFO - Scheduled daily report for 2025-04-29 20:00:00 ET
+2025-04-28 19:09:41,874 - INFO - (78618 seconds from now)
+2025-04-28 19:09:42,138 - ERROR - Error checking market holidays: 'str' object has no attribute 'get'
+2025-04-28 19:09:42,140 - INFO - Connecting to IBKR at 127.0.0.1:7497 with client ID 1
+2025-04-28 19:09:42,141 - INFO - Connecting to 127.0.0.1:7497 with clientId 1...
+2025-04-28 19:09:42,143 - INFO - Connected
+2025-04-28 19:09:42,153 - INFO - Logged on to server version 176
+2025-04-28 19:09:42,158 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm.nj
+2025-04-28 19:09:42,158 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfuture
+2025-04-28 19:09:42,159 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:cashfarm
+2025-04-28 19:09:42,159 - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm
+2025-04-28 19:09:42,160 - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:ushmds
+2025-04-28 19:09:42,160 - INFO - Warning 2158, reqId -1: Sec-def data farm connection is OK:secdefil
+2025-04-28 19:09:42,161 - INFO - API connection ready
+2025-04-28 19:09:42,467 - INFO - Synchronization complete
+2025-04-28 19:09:42,468 - INFO - Successfully connected to IBKR
+2025-04-28 19:09:42,551 - WARNING - WARNING: Connected to LIVE trading account!
+2025-04-28 19:09:42,789 - INFO - Market is currently CLOSED
+2025-04-28 19:09:43,029 - ERROR - Error checking market holidays: 'str' object has no attribute 'get'
+2025-04-28 19:09:43,039 - INFO - Today (2025-04-28): Trading day: Yes
+2025-04-28 19:09:43,040 - INFO - Next trading day: 2025-04-29
+2025-04-28 19:09:43,996 - INFO - Found 138 potential earnings plays: AOS, OPCH, ZBRA, UFPI, CECO, PJT, FELE, ALLGF, PDM, HLMN, EPD, FSFG, NE, NEO, FBRT, THC, HLIT, AWI, NAUT, CDP, ALRS, CWK, NSP, CCK, SSKN, ARE, CNO, SSD, NOV, SOFI, TWO, NARI, UHT, SBSI, HTLD, SPGI, PUMP, HOUS, UAN, ETR, WWD, ABCB, CDNS, EFTR, FPI, RIG, CVLT, FISI, CVI, PCAR, HLT, FFIV, CINF, SBUX, KFRC, AOREF, ECL, NWBI, BCAL, ARCB, LH, EZPW, AROW, REGN, HON, WELL, CBU, UHS, WM, PFE, KHC, FSBC, SJW, CR, HRZN, WRLD, SMBC, NXRT, LGIH, NXPI, NTRB, RCL, AMKR, LEG, FSUN, BRO, EFSC, PYPL, EAT, ICDIQ, SANM, GABC, INCY, UCTT, SPOT, DEA, SEVN, BALY, SCL, SHW, RBB, MED, CLVT, MLI, SEI, HMST, GM, JBLU, NUE, GLW, RBOT, NTST, SFD, FCF, NVR, TER, BYON, TZOO, PCH, PII, APM, KO, TRS, SBAC, AMT, RMBS, SYY, BRX, ASTE, FOUR, FPAY, XYL, ABG, OMF, MO, UPS, RGEN, ARCC
+2025-04-28 19:09:43,997 - INFO - Running in immediate mode
+2025-04-28 19:09:44,024 - INFO - Loaded 114 pre-screened symbols from earlier today
+2025-04-28 19:09:44,026 - INFO - Using pre-screening result for AOS: FAILED
+2025-04-28 19:09:44,026 - INFO - Using pre-screening result for OPCH: FAILED
+2025-04-28 19:09:44,027 - INFO - Using pre-screening result for ZBRA: FAILED
+2025-04-28 19:09:44,028 - INFO - Using pre-screening result for UFPI: FAILED
+2025-04-28 19:09:44,028 - INFO - Using pre-screening result for CECO: FAILED
+2025-04-28 19:09:44,029 - INFO - Using pre-screening result for PJT: FAILED
+2025-04-28 19:09:44,029 - INFO - Using pre-screening result for FELE: FAILED
+2025-04-28 19:09:44,030 - INFO - Using pre-screening result for PDM: FAILED
+2025-04-28 19:09:44,030 - INFO - Using pre-screening result for HLMN: FAILED
+2025-04-28 19:09:44,030 - INFO - Using pre-screening result for EPD: FAILED
+2025-04-28 19:09:44,032 - INFO - Using pre-screening result for NE: FAILED
+2025-04-28 19:09:44,032 - INFO - Using pre-screening result for NEO: FAILED
+2025-04-28 19:09:44,033 - INFO - Using pre-screening result for FBRT: FAILED
+2025-04-28 19:09:44,033 - INFO - Using pre-screening result for THC: FAILED
+2025-04-28 19:09:44,035 - INFO - Using pre-screening result for HLIT: FAILED
+2025-04-28 19:09:44,036 - INFO - Using pre-screening result for AWI: FAILED
+2025-04-28 19:09:44,040 - INFO - Using pre-screening result for CDP: FAILED
+2025-04-28 19:09:44,040 - INFO - Using pre-screening result for CWK: FAILED
+2025-04-28 19:09:44,041 - INFO - Using pre-screening result for NSP: FAILED
+2025-04-28 19:09:44,041 - INFO - Using pre-screening result for CCK: FAILED
+2025-04-28 19:09:44,042 - INFO - Using pre-screening result for ARE: FAILED
+2025-04-28 19:09:44,042 - INFO - Using pre-screening result for CNO: FAILED
+2025-04-28 19:09:44,042 - INFO - Using pre-screening result for SSD: FAILED
+2025-04-28 19:09:44,043 - INFO - Using pre-screening result for NOV: FAILED
+2025-04-28 19:09:44,043 - INFO - Using pre-screening result for SOFI: FAILED
+2025-04-28 19:09:44,044 - INFO - Using pre-screening result for TWO: FAILED
+2025-04-28 19:09:44,044 - INFO - Using pre-screening result for SBSI: FAILED
+2025-04-28 19:09:44,045 - INFO - Using pre-screening result for HTLD: FAILED
+2025-04-28 19:09:44,047 - INFO - Using pre-screening result for SPGI: FAILED
+2025-04-28 19:09:44,048 - INFO - Using pre-screening result for PUMP: FAILED
+2025-04-28 19:09:44,050 - INFO - Using pre-screening result for HOUS: FAILED
+2025-04-28 19:09:44,051 - INFO - Using pre-screening result for UAN: FAILED
+2025-04-28 19:09:44,051 - INFO - Using pre-screening result for ETR: FAILED
+2025-04-28 19:09:44,052 - INFO - Using pre-screening result for WWD: FAILED
+2025-04-28 19:09:44,052 - INFO - Using pre-screening result for ABCB: FAILED
+2025-04-28 19:09:44,053 - INFO - Using pre-screening result for CDNS: FAILED
+2025-04-28 19:09:44,054 - INFO - Using pre-screening result for FPI: FAILED
+2025-04-28 19:09:44,057 - INFO - Using pre-screening result for RIG: FAILED
+2025-04-28 19:09:44,058 - INFO - Using pre-screening result for CVLT: FAILED
+2025-04-28 19:09:44,058 - INFO - Using pre-screening result for CVI: FAILED
+2025-04-28 19:09:44,059 - INFO - Using pre-screening result for PCAR: FAILED
+2025-04-28 19:09:44,059 - INFO - Using pre-screening result for HLT: FAILED
+2025-04-28 19:09:44,059 - INFO - Using pre-screening result for FFIV: FAILED
+2025-04-28 19:09:44,060 - INFO - Using pre-screening result for CINF: FAILED
+2025-04-28 19:09:44,060 - INFO - Using pre-screening result for SBUX: FAILED
+2025-04-28 19:09:44,060 - INFO - Using pre-screening result for KFRC: FAILED
+2025-04-28 19:09:44,061 - INFO - Using pre-screening result for ECL: FAILED
+2025-04-28 19:09:44,061 - INFO - Using pre-screening result for NWBI: FAILED
+2025-04-28 19:09:44,062 - INFO - Using pre-screening result for ARCB: FAILED
+2025-04-28 19:09:44,064 - INFO - Using pre-screening result for LH: FAILED
+2025-04-28 19:09:44,065 - INFO - Using pre-screening result for EZPW: FAILED
+2025-04-28 19:09:44,065 - INFO - Using pre-screening result for AROW: FAILED
+2025-04-28 19:09:44,065 - INFO - Using pre-screening result for REGN: FAILED
+2025-04-28 19:09:44,066 - INFO - Using pre-screening result for HON: FAILED
+2025-04-28 19:09:44,069 - INFO - Using pre-screening result for WELL: FAILED
+2025-04-28 19:09:44,070 - INFO - Using pre-screening result for UHS: FAILED
+2025-04-28 19:09:44,072 - INFO - Using pre-screening result for WM: FAILED
+2025-04-28 19:09:44,072 - INFO - Using pre-screening result for PFE: FAILED
+2025-04-28 19:09:44,073 - INFO - Using pre-screening result for KHC: FAILED
+2025-04-28 19:09:44,074 - INFO - Using pre-screening result for SJW: FAILED
+2025-04-28 19:09:44,074 - INFO - Using pre-screening result for CR: FAILED
+2025-04-28 19:09:44,075 - INFO - Using pre-screening result for HRZN: FAILED
+2025-04-28 19:09:44,075 - INFO - Using pre-screening result for SMBC: FAILED
+2025-04-28 19:09:44,076 - INFO - Using pre-screening result for NXRT: FAILED
+2025-04-28 19:09:44,076 - INFO - Using pre-screening result for LGIH: FAILED
+2025-04-28 19:09:44,077 - INFO - Using pre-screening result for NXPI: FAILED
+2025-04-28 19:09:44,078 - INFO - Using pre-screening result for RCL: FAILED
+2025-04-28 19:09:44,079 - INFO - Using pre-screening result for AMKR: FAILED
+2025-04-28 19:09:44,080 - INFO - Using pre-screening result for LEG: FAILED
+2025-04-28 19:09:44,081 - INFO - Using pre-screening result for BRO: FAILED
+2025-04-28 19:09:44,082 - INFO - Using pre-screening result for EFSC: FAILED
+2025-04-28 19:09:44,082 - INFO - Using pre-screening result for PYPL: FAILED
+2025-04-28 19:09:44,084 - INFO - Using pre-screening result for EAT: FAILED
+2025-04-28 19:09:44,085 - INFO - Using pre-screening result for SANM: FAILED
+2025-04-28 19:09:44,089 - INFO - Using pre-screening result for GABC: FAILED
+2025-04-28 19:09:44,089 - INFO - Using pre-screening result for INCY: FAILED
+2025-04-28 19:09:44,090 - INFO - Using pre-screening result for UCTT: FAILED
+2025-04-28 19:09:44,091 - INFO - Using pre-screening result for SPOT: FAILED
+2025-04-28 19:09:44,093 - INFO - Using pre-screening result for DEA: FAILED
+2025-04-28 19:09:44,094 - INFO - Using pre-screening result for SEVN: FAILED
+2025-04-28 19:09:44,094 - INFO - Using pre-screening result for SCL: FAILED
+2025-04-28 19:09:44,095 - INFO - Using pre-screening result for SHW: FAILED
+2025-04-28 19:09:44,096 - INFO - Using pre-screening result for MED: FAILED
+2025-04-28 19:09:44,096 - INFO - Using pre-screening result for CLVT: FAILED
+2025-04-28 19:09:44,097 - INFO - Using pre-screening result for MLI: FAILED
+2025-04-28 19:09:44,097 - INFO - Using pre-screening result for SEI: FAILED
+2025-04-28 19:09:44,098 - INFO - Using pre-screening result for HMST: FAILED
+2025-04-28 19:09:44,098 - INFO - Using pre-screening result for GM: FAILED
+2025-04-28 19:09:44,099 - INFO - Using pre-screening result for JBLU: FAILED
+2025-04-28 19:09:44,099 - INFO - Using pre-screening result for NUE: FAILED
+2025-04-28 19:09:44,099 - INFO - Using pre-screening result for GLW: FAILED
+2025-04-28 19:09:44,100 - INFO - Using pre-screening result for NTST: FAILED
+2025-04-28 19:09:44,101 - INFO - Using pre-screening result for FCF: FAILED
+2025-04-28 19:09:44,101 - INFO - Using pre-screening result for TER: FAILED
+2025-04-28 19:09:44,102 - INFO - Using pre-screening result for BYON: FAILED
+2025-04-28 19:09:44,103 - INFO - Using pre-screening result for TZOO: FAILED
+2025-04-28 19:09:44,103 - INFO - Using pre-screening result for PCH: FAILED
+2025-04-28 19:09:44,104 - INFO - Using pre-screening result for PII: FAILED
+2025-04-28 19:09:44,105 - INFO - Using pre-screening result for KO: FAILED
+2025-04-28 19:09:44,106 - INFO - Using pre-screening result for TRS: FAILED
+2025-04-28 19:09:44,107 - INFO - Using pre-screening result for SBAC: FAILED
+2025-04-28 19:09:44,107 - INFO - Using pre-screening result for AMT: FAILED
+2025-04-28 19:09:44,108 - INFO - Using pre-screening result for RMBS: FAILED
+2025-04-28 19:09:44,111 - INFO - Using pre-screening result for SYY: FAILED
+2025-04-28 19:09:44,112 - INFO - Using pre-screening result for BRX: FAILED
+2025-04-28 19:09:44,113 - INFO - Using pre-screening result for ASTE: FAILED
+2025-04-28 19:09:44,113 - INFO - Using pre-screening result for FOUR: FAILED
+2025-04-28 19:09:44,114 - INFO - Using pre-screening result for XYL: FAILED
+2025-04-28 19:09:44,115 - INFO - Using pre-screening result for ABG: FAILED
+2025-04-28 19:09:44,115 - INFO - Using pre-screening result for OMF: FAILED
+2025-04-28 19:09:44,116 - INFO - Using pre-screening result for MO: FAILED
+2025-04-28 19:09:44,116 - INFO - Using pre-screening result for UPS: FAILED
+2025-04-28 19:09:44,117 - INFO - Using pre-screening result for RGEN: FAILED
+2025-04-28 19:09:44,118 - INFO - Using pre-screening result for ARCC: FAILED
+2025-04-28 19:09:44,118 - INFO - Screening complete. 0 of 138 symbols passed screening.
+2025-04-28 19:09:44,120 - INFO - Retrieved actual account value: $1002422.59
+2025-04-28 19:09:44,121 - INFO - Account value: $1002422.59, Risk per position: 6.5%
+2025-04-28 19:09:44,121 - WARNING - No trades were placed
+2025-04-28 19:09:44,122 - INFO - Disconnecting from 127.0.0.1:7497, 710 B sent in 9 messages, 23.9 kB received in 529 messages, session time 1.98 s.
+2025-04-28 19:09:44,123 - INFO - Disconnecting
+2025-04-28 19:09:44,157 - INFO - Loaded 0 historical trades
+2025-04-28 19:09:46,046 - INFO - Email alert sent: Earnings Calendar Bot - Performance Report
+2025-04-28 19:09:46,047 - INFO - Performance report sent successfully
+2025-04-28 19:39:17,592 - INFO - Analyzing metrics for KHC
+2025-04-28 19:39:18,211 - INFO - KHC 30-day avg volume: 11385113
+2025-04-28 19:39:18,360 - INFO - Expiration 2025-05-02: ATM IV = 0.5967
+2025-04-28 19:39:18,442 - INFO - Expiration 2025-05-09: ATM IV = 0.4722
+2025-04-28 19:39:18,503 - INFO - Expiration 2025-05-16: ATM IV = 0.3721
+2025-04-28 19:39:18,565 - INFO - Expiration 2025-05-23: ATM IV = 0.5042
+2025-04-28 19:39:18,622 - INFO - Expiration 2025-05-30: ATM IV = 0.4561
+2025-04-28 19:39:18,691 - INFO - Expiration 2025-06-06: ATM IV = 0.5103
+2025-04-28 19:39:18,744 - INFO - Expiration 2025-06-20: ATM IV = 0.2918
+2025-04-28 19:39:18,814 - INFO - Expiration 2025-07-18: ATM IV = 0.2698
+2025-04-28 19:39:18,873 - INFO - Expiration 2025-09-19: ATM IV = 0.3198
+2025-04-28 19:39:18,945 - INFO - Expiration 2025-10-17: ATM IV = 0.2748
+2025-04-28 19:39:19,010 - INFO - Expiration 2026-01-16: ATM IV = 0.2906
+2025-04-28 19:39:19,071 - INFO - Expiration 2026-03-20: ATM IV = 0.2680
+2025-04-28 19:39:19,133 - INFO - Expiration 2026-06-18: ATM IV = 0.2812
+2025-04-28 19:39:19,208 - INFO - Expiration 2026-12-18: ATM IV = 0.2640
+2025-04-28 19:39:19,333 - INFO - Expiration 2027-01-15: ATM IV = 0.2780
+2025-04-28 19:39:19,334 - INFO - KHC term structure slope (0-45): -0.004392
+2025-04-28 19:39:19,341 - INFO - KHC 30-day RV: 0.2993
+2025-04-28 19:39:19,341 - INFO - KHC 30-day IV: 0.4698
+2025-04-28 19:39:19,341 - INFO - KHC IV30/RV30 ratio: 1.57
+2025-04-28 19:39:19,342 - INFO - Volume check (11385113 >= 1500000): PASS
+2025-04-28 19:39:19,342 - INFO - IV/RV check (1.57 >= 1.25): PASS
+2025-04-28 19:39:19,342 - INFO - Term structure check (-0.004392 <= -0.00406): PASS
+2025-04-28 19:39:19,342 - INFO - Overall result: PASS
+2025-04-28 19:39:19,343 - INFO - Analyzing metrics for KHC
+2025-04-28 19:39:19,393 - INFO - KHC 30-day avg volume: 11385113
+2025-04-28 19:39:19,455 - INFO - Expiration 2025-05-02: ATM IV = 0.5967
+2025-04-28 19:39:19,491 - INFO - Expiration 2025-05-09: ATM IV = 0.4722
+2025-04-28 19:39:19,526 - INFO - Expiration 2025-05-16: ATM IV = 0.3721
+2025-04-28 19:39:19,563 - INFO - Expiration 2025-05-23: ATM IV = 0.5042
+2025-04-28 19:39:19,591 - INFO - Expiration 2025-05-30: ATM IV = 0.4561
+2025-04-28 19:39:19,619 - INFO - Expiration 2025-06-06: ATM IV = 0.5103
+2025-04-28 19:39:19,679 - INFO - Expiration 2025-06-20: ATM IV = 0.2918
+2025-04-28 19:39:19,709 - INFO - Expiration 2025-07-18: ATM IV = 0.2698
+2025-04-28 19:39:19,761 - INFO - Expiration 2025-09-19: ATM IV = 0.3198
+2025-04-28 19:39:19,809 - INFO - Expiration 2025-10-17: ATM IV = 0.2748
+2025-04-28 19:39:19,885 - INFO - Expiration 2026-01-16: ATM IV = 0.2906
+2025-04-28 19:39:19,916 - INFO - Expiration 2026-03-20: ATM IV = 0.2680
+2025-04-28 19:39:19,976 - INFO - Expiration 2026-06-18: ATM IV = 0.2812
+2025-04-28 19:39:20,004 - INFO - Expiration 2026-12-18: ATM IV = 0.2640
+2025-04-28 19:39:20,036 - INFO - Expiration 2027-01-15: ATM IV = 0.2780
+2025-04-28 19:39:20,037 - INFO - KHC term structure slope (0-45): -0.004392
+2025-04-28 19:39:20,043 - INFO - KHC 30-day RV: 0.2993
+2025-04-28 19:39:20,044 - INFO - KHC 30-day IV: 0.4698
+2025-04-28 19:39:20,044 - INFO - KHC IV30/RV30 ratio: 1.57
+2025-04-28 19:39:20,044 - INFO - Volume check (11385113 >= 1500000): PASS
+2025-04-28 19:39:20,045 - INFO - IV/RV check (1.57 >= 1.25): PASS
+2025-04-28 19:39:20,045 - INFO - Term structure check (-0.004392 <= -0.00406): PASS
+2025-04-28 19:39:20,045 - INFO - Overall result: PASS
+2025-04-28 19:39:20,047 - INFO - Analyzing metrics for AAPL
+2025-04-28 19:39:20,181 - INFO - AAPL 30-day avg volume: 68687907
+2025-04-28 19:39:20,328 - INFO - Expiration 2025-05-02: ATM IV = 0.5785
+2025-04-28 19:39:20,422 - INFO - Expiration 2025-05-09: ATM IV = 0.4280
+2025-04-28 19:39:20,512 - INFO - Expiration 2025-05-16: ATM IV = 0.3829
+2025-04-28 19:39:20,576 - INFO - Expiration 2025-05-23: ATM IV = 0.3614
+2025-04-28 19:39:20,670 - INFO - Expiration 2025-05-30: ATM IV = 0.3467
+2025-04-28 19:39:20,730 - INFO - Expiration 2025-06-06: ATM IV = 0.3397
+2025-04-28 19:39:20,810 - INFO - Expiration 2025-06-20: ATM IV = 0.3274
+2025-04-28 19:39:20,880 - INFO - Expiration 2025-07-18: ATM IV = 0.3214
+2025-04-28 19:39:20,960 - INFO - Expiration 2025-08-15: ATM IV = 0.3241
+2025-04-28 19:39:21,045 - INFO - Expiration 2025-09-19: ATM IV = 0.3178
+2025-04-28 19:39:21,126 - INFO - Expiration 2025-10-17: ATM IV = 0.3126
+2025-04-28 19:39:21,217 - INFO - Expiration 2025-12-19: ATM IV = 0.3079
+2025-04-28 19:39:21,335 - INFO - Expiration 2026-01-16: ATM IV = 0.3052
+2025-04-28 19:39:21,432 - INFO - Expiration 2026-03-20: ATM IV = 0.3025
+2025-04-28 19:39:21,526 - INFO - Expiration 2026-06-18: ATM IV = 0.2987
+2025-04-28 19:39:21,607 - INFO - Expiration 2026-12-18: ATM IV = 0.2953
+2025-04-28 19:39:21,685 - INFO - Expiration 2027-01-15: ATM IV = 0.2945
+2025-04-28 19:39:21,774 - INFO - Expiration 2027-06-17: ATM IV = 0.2943
+2025-04-28 19:39:21,861 - INFO - Expiration 2027-12-17: ATM IV = 0.2912
+2025-04-28 19:39:21,862 - INFO - AAPL term structure slope (0-45): -0.005953
+2025-04-28 19:39:21,873 - INFO - AAPL 30-day RV: 0.6663
+2025-04-28 19:39:21,873 - INFO - AAPL 30-day IV: 0.3509
+2025-04-28 19:39:21,874 - INFO - AAPL IV30/RV30 ratio: 0.53
+2025-04-28 19:39:21,874 - INFO - Volume check (68687907 >= 1500000): PASS
+2025-04-28 19:39:21,874 - INFO - IV/RV check (0.53 >= 1.25): FAIL
+2025-04-28 19:39:21,874 - INFO - Term structure check (-0.005953 <= -0.00406): PASS
+2025-04-28 19:39:21,874 - INFO - Overall result: FAIL
+2025-04-28 19:39:21,875 - INFO - Analyzing metrics for MSFT
+2025-04-28 19:39:21,979 - INFO - MSFT 30-day avg volume: 25141787
+2025-04-28 19:39:22,153 - INFO - Expiration 2025-05-02: ATM IV = 0.5818
+2025-04-28 19:39:22,236 - INFO - Expiration 2025-05-09: ATM IV = 0.4092
+2025-04-28 19:39:22,358 - INFO - Expiration 2025-05-16: ATM IV = 0.3741
+2025-04-28 19:39:22,424 - INFO - Expiration 2025-05-23: ATM IV = 0.3641
+2025-04-28 19:39:22,495 - INFO - Expiration 2025-05-30: ATM IV = 0.3273
+2025-04-28 19:39:22,566 - INFO - Expiration 2025-06-06: ATM IV = 0.3200
+2025-04-28 19:39:22,671 - INFO - Expiration 2025-06-20: ATM IV = 0.3150
+2025-04-28 19:39:22,746 - INFO - Expiration 2025-07-18: ATM IV = 0.2832
+2025-04-28 19:39:22,830 - INFO - Expiration 2025-08-15: ATM IV = 0.3015
+2025-04-28 19:39:22,926 - INFO - Expiration 2025-09-19: ATM IV = 0.2952
+2025-04-28 19:39:22,993 - INFO - Expiration 2025-10-17: ATM IV = 0.2912
+2025-04-28 19:39:23,074 - INFO - Expiration 2025-12-19: ATM IV = 0.2852
+2025-04-28 19:39:23,169 - INFO - Expiration 2026-01-16: ATM IV = 0.2844
+2025-04-28 19:39:23,245 - INFO - Expiration 2026-03-20: ATM IV = 0.2871
+2025-04-28 19:39:23,338 - INFO - Expiration 2026-06-18: ATM IV = 0.2848
+2025-04-28 19:39:23,437 - INFO - Expiration 2026-12-18: ATM IV = 0.2822
+2025-04-28 19:39:23,508 - INFO - Expiration 2027-01-15: ATM IV = 0.2789
+2025-04-28 19:39:23,581 - INFO - Expiration 2027-06-17: ATM IV = 0.2751
+2025-04-28 19:39:23,652 - INFO - Expiration 2027-12-17: ATM IV = 0.2758
+2025-04-28 19:39:23,653 - INFO - MSFT term structure slope (0-45): -0.006436
+2025-04-28 19:39:23,659 - INFO - MSFT 30-day RV: 0.3931
+2025-04-28 19:39:23,659 - INFO - MSFT 30-day IV: 0.3378
+2025-04-28 19:39:23,659 - INFO - MSFT IV30/RV30 ratio: 0.86
+2025-04-28 19:39:23,659 - INFO - Volume check (25141787 >= 1500000): PASS
+2025-04-28 19:39:23,659 - INFO - IV/RV check (0.86 >= 1.25): FAIL
+2025-04-28 19:39:23,659 - INFO - Term structure check (-0.006436 <= -0.00406): PASS
+2025-04-28 19:39:23,659 - INFO - Overall result: FAIL
+2025-04-28 19:39:23,660 - INFO - Analyzing metrics for AMZN
+2025-04-28 19:39:23,727 - INFO - AMZN 30-day avg volume: 56371333
+2025-04-28 19:39:23,901 - INFO - Expiration 2025-05-02: ATM IV = 0.8138
+2025-04-28 19:39:23,976 - INFO - Expiration 2025-05-09: ATM IV = 0.5573
+2025-04-28 19:39:24,056 - INFO - Expiration 2025-05-16: ATM IV = 0.4846
+2025-04-28 19:39:24,122 - INFO - Expiration 2025-05-23: ATM IV = 0.4403
+2025-04-28 19:39:24,181 - INFO - Expiration 2025-05-30: ATM IV = 0.4117
+2025-04-28 19:39:24,260 - INFO - Expiration 2025-06-06: ATM IV = 0.4190
+2025-04-28 19:39:24,344 - INFO - Expiration 2025-06-20: ATM IV = 0.3804
+2025-04-28 19:39:24,409 - INFO - Expiration 2025-07-18: ATM IV = 0.3609
+2025-04-28 19:39:24,494 - INFO - Expiration 2025-08-15: ATM IV = 0.3716
+2025-04-28 19:39:24,568 - INFO - Expiration 2025-09-19: ATM IV = 0.3590
+2025-04-28 19:39:24,638 - INFO - Expiration 2025-10-17: ATM IV = 0.3514
+2025-04-28 19:39:24,714 - INFO - Expiration 2025-11-21: ATM IV = 0.3563
+2025-04-28 19:39:24,831 - INFO - Expiration 2025-12-19: ATM IV = 0.3499
+2025-04-28 19:39:24,909 - INFO - Expiration 2026-01-16: ATM IV = 0.3446
+2025-04-28 19:39:24,979 - INFO - Expiration 2026-03-20: ATM IV = 0.3437
+2025-04-28 19:39:25,064 - INFO - Expiration 2026-06-18: ATM IV = 0.3406
+2025-04-28 19:39:25,154 - INFO - Expiration 2026-12-18: ATM IV = 0.3377
+2025-04-28 19:39:25,287 - INFO - Expiration 2027-01-15: ATM IV = 0.3371
+2025-04-28 19:39:25,376 - INFO - Expiration 2027-06-17: ATM IV = 0.3360
+2025-04-28 19:39:25,466 - INFO - Expiration 2027-12-17: ATM IV = 0.3377
+2025-04-28 19:39:25,468 - INFO - AMZN term structure slope (0-45): -0.010034
+2025-04-28 19:39:25,477 - INFO - AMZN 30-day RV: 0.6570
+2025-04-28 19:39:25,477 - INFO - AMZN 30-day IV: 0.4199
+2025-04-28 19:39:25,478 - INFO - AMZN IV30/RV30 ratio: 0.64
+2025-04-28 19:39:25,478 - INFO - Volume check (56371333 >= 1500000): PASS
+2025-04-28 19:39:25,478 - INFO - IV/RV check (0.64 >= 1.25): FAIL
+2025-04-28 19:39:25,478 - INFO - Term structure check (-0.010034 <= -0.00406): PASS
+2025-04-28 19:39:25,478 - INFO - Overall result: FAIL

@@ -908,7 +908,7 @@ def check_watchdog_status():
 # Update the analyze_stock_metrics function to fix type warnings
 def analyze_stock_metrics(symbol):
     """
-    Analyze stock metrics using the provided logic from the example code
+    Analyze stock metrics using the same logic as in the manual tool
     Returns a dict with the three key metrics and whether they meet criteria
     """
     try:
@@ -929,10 +929,7 @@ def analyze_stock_metrics(symbol):
 
         logger.info(f"Analyzing metrics for {symbol}")
 
-        # Add rate limiting for free tier (5 requests per minute)
-        time.sleep(12)  # Sleep for 12 seconds between requests (~5 per minute)
-
-        # Get stock data using yfinance (avoid using Polygon API for basic data)
+        # Get stock data using yfinance
         stock = yf.Ticker(symbol)
 
         # Get price history for volatility calculation
@@ -941,7 +938,7 @@ def analyze_stock_metrics(symbol):
             logger.error(f"No price history found for {symbol}")
             return None
 
-        # Calculate 30-day average volume (use yfinance data instead of Polygon)
+        # Calculate 30-day average volume (use yfinance data)
         avg_volume = float(price_history['Volume'].rolling(30).mean().dropna().iloc[-1])
         logger.info(f"{symbol} 30-day avg volume: {avg_volume:.0f}")
 
@@ -953,15 +950,31 @@ def analyze_stock_metrics(symbol):
             logger.error(f"No options found for {symbol}")
             return None
 
-        # Get expiration dates
-        exp_dates = list(stock.options)
-        if len(exp_dates) < 2:
-            logger.error(f"Not enough option expirations for {symbol}")
-            return None
+        # Filter dates like in the manual tool
+        try:
+            today = datetime.date.today()
+            cutoff_date = today + datetime.timedelta(days=45)
 
-        # Get ATM IV for each expiration
+            exp_dates = []
+            for date_str in stock.options:
+                date_obj = datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
+                if date_obj >= today:
+                    exp_dates.append((date_str, date_obj))
+
+            exp_dates.sort(key=lambda x: x[1])  # Sort by date
+            filtered_exp_dates = [date_str for date_str, date_obj in exp_dates]
+
+            if len(filtered_exp_dates) == 0:
+                logger.error(f"No valid expiration dates found for {symbol}")
+                return None
+
+        except Exception as e:
+            logger.error(f"Error filtering dates: {e}")
+            filtered_exp_dates = stock.options
+
+        # Get ATM IV for each expiration - USING THE SAME METHOD AS MANUAL TOOL
         atm_iv = {}
-        for exp_date in exp_dates:
+        for exp_date in filtered_exp_dates:
             try:
                 chain = stock.option_chain(exp_date)
                 calls = chain.calls
@@ -970,20 +983,19 @@ def analyze_stock_metrics(symbol):
                 if calls.empty or puts.empty:
                     continue
 
-                # Find ATM options - Fix: Use proper pandas DataFrame indexing
+                # Find ATM options - exactly like manual tool
                 call_diffs = (calls['strike'] - current_price).abs()
-                call_idx = call_diffs.idxmin()  # This returns index position
-                # Fix: Ensure proper DataFrame access with .loc
-                call_iv = float(calls.loc[call_idx, 'impliedVolatility'])
+                call_idx = call_diffs.idxmin()
+                call_iv = calls.loc[call_idx, 'impliedVolatility']
 
                 put_diffs = (puts['strike'] - current_price).abs()
                 put_idx = put_diffs.idxmin()
-                # Fix: Ensure proper DataFrame access with .loc
-                put_iv = float(puts.loc[put_idx, 'impliedVolatility'])
+                put_iv = puts.loc[put_idx, 'impliedVolatility']
 
                 # Average the call and put IVs
                 atm_iv_value = (call_iv + put_iv) / 2.0
                 atm_iv[exp_date] = atm_iv_value
+                logger.info(f"Expiration {exp_date}: ATM IV = {atm_iv_value:.4f}")
             except Exception as e:
                 logger.warning(f"Error processing option chain for {exp_date}: {e}")
 
@@ -1008,34 +1020,44 @@ def analyze_stock_metrics(symbol):
 
         term_spline = build_term_structure(dtes, ivs)
 
-        # Calculate term structure slope (0-45 days)
+        # Calculate term structure slope (0-45 days) - EXACTLY LIKE MANUAL TOOL
         min_dte = min(dtes)
         ts_slope_0_45 = (term_spline(45) - term_spline(min_dte)) / (45 - min_dte)
         logger.info(f"{symbol} term structure slope (0-45): {ts_slope_0_45:.6f}")
 
-        # Calculate 30-day RV using Yang-Zhang estimator (use yfinance data)
+        # Calculate 30-day RV using Yang-Zhang estimator - EXACTLY LIKE MANUAL TOOL
         rv30 = float(yang_zhang(price_history))
+        logger.info(f"{symbol} 30-day RV: {rv30:.4f}")
 
-        # Calculate IV/RV ratio
+        # Calculate IV/RV ratio - EXACTLY LIKE MANUAL TOOL
         iv30 = float(term_spline(30))
+        logger.info(f"{symbol} 30-day IV: {iv30:.4f}")
         iv30_rv30 = iv30 / rv30 if rv30 > 0 else 0
         logger.info(f"{symbol} IV30/RV30 ratio: {iv30_rv30:.2f}")
 
-        # Check if metrics meet criteria
+        # Check if metrics meet criteria - EXACTLY LIKE MANUAL TOOL
         avg_volume_check = avg_volume >= min_avg_volume
         iv30_rv30_check = iv30_rv30 >= min_iv30_rv30_ratio
-        ts_slope_check = ts_slope_0_45 <= max_term_structure_slope  # Negative slope is preferred
+        ts_slope_check = ts_slope_0_45 <= max_term_structure_slope
+
+        logger.info(f"Volume check ({avg_volume:.0f} >= {min_avg_volume}): {'PASS' if avg_volume_check else 'FAIL'}")
+        logger.info(f"IV/RV check ({iv30_rv30:.2f} >= {min_iv30_rv30_ratio}): {'PASS' if iv30_rv30_check else 'FAIL'}")
+        logger.info(
+            f"Term structure check ({ts_slope_0_45:.6f} <= {max_term_structure_slope}): {'PASS' if ts_slope_check else 'FAIL'}")
+
+        all_criteria_met = avg_volume_check and iv30_rv30_check and ts_slope_check
+        logger.info(f"Overall result: {'PASS' if all_criteria_met else 'FAIL'}")
 
         # Return results
         results = {
             'symbol': symbol,
-            'avg_volume': float(avg_volume),  # Fix: Explicitly convert pandas values to Python types
+            'avg_volume': float(avg_volume),
             'avg_volume_pass': bool(avg_volume_check),
             'iv30_rv30': float(iv30_rv30),
             'iv30_rv30_pass': bool(iv30_rv30_check),
             'ts_slope_0_45': float(ts_slope_0_45),
             'ts_slope_pass': bool(ts_slope_check),
-            'all_criteria_met': bool(avg_volume_check and iv30_rv30_check and ts_slope_check)
+            'all_criteria_met': bool(all_criteria_met)
         }
 
         return results
@@ -1043,7 +1065,6 @@ def analyze_stock_metrics(symbol):
     except Exception as e:
         logger.error(f"Error analyzing metrics for {symbol}: {e}")
         return None
-
 
 def pre_screen_earnings_symbols():
     """
