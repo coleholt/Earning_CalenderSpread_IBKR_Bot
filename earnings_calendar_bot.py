@@ -7,6 +7,7 @@ entering positions shortly before market close and exiting after the next market
 """
 
 import finnhub
+from ibkr_data_collector import IBKRDataCollector, analyze_stock_metrics_with_ibkr
 from ib_insync import LimitOrder, MarketOrder
 import json
 import datetime
@@ -911,168 +912,16 @@ def analyze_stock_metrics(symbol):
     Analyze stock metrics using the same logic as in the manual tool
     Returns a dict with the three key metrics and whether they meet criteria
     """
-    try:
-        # Load screening criteria from config
-        try:
-            with open('config.json', 'r') as config_file:
-                config = json.load(config_file)
-                criteria = config['strategy']['screening_criteria']
-                min_avg_volume = criteria.get('min_avg_volume', 1500000)
-                min_iv30_rv30_ratio = criteria.get('min_iv30_rv30_ratio', 1.25)
-                max_term_structure_slope = criteria.get('max_term_structure_slope', -0.00406)
-        except Exception as e:
-            logger.warning(f"Error loading config, using default criteria: {e}")
-            # Default criteria
-            min_avg_volume = 1500000
-            min_iv30_rv30_ratio = 1.25
-            max_term_structure_slope = -0.00406
+    return analyze_stock_metrics_with_ibkr(symbol)
 
-        logger.info(f"Analyzing metrics for {symbol}")
-
-        # Get stock data using yfinance
-        stock = yf.Ticker(symbol)
-
-        # Get price history for volatility calculation
-        price_history = stock.history(period='3mo')
-        if price_history.empty:
-            logger.error(f"No price history found for {symbol}")
-            return None
-
-        # Calculate 30-day average volume (use yfinance data)
-        avg_volume = float(price_history['Volume'].rolling(30).mean().dropna().iloc[-1])
-        logger.info(f"{symbol} 30-day avg volume: {avg_volume:.0f}")
-
-        # Get current price
-        current_price = float(price_history['Close'].iloc[-1])
-
-        # Get options chain data for term structure
-        if len(stock.options) == 0:
-            logger.error(f"No options found for {symbol}")
-            return None
-
-        # Filter dates like in the manual tool
-        try:
-            today = datetime.date.today()
-            cutoff_date = today + datetime.timedelta(days=45)
-
-            exp_dates = []
-            for date_str in stock.options:
-                date_obj = datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
-                if date_obj >= today:
-                    exp_dates.append((date_str, date_obj))
-
-            exp_dates.sort(key=lambda x: x[1])  # Sort by date
-            filtered_exp_dates = [date_str for date_str, date_obj in exp_dates]
-
-            if len(filtered_exp_dates) == 0:
-                logger.error(f"No valid expiration dates found for {symbol}")
-                return None
-
-        except Exception as e:
-            logger.error(f"Error filtering dates: {e}")
-            filtered_exp_dates = stock.options
-
-        # Get ATM IV for each expiration - USING THE SAME METHOD AS MANUAL TOOL
-        atm_iv = {}
-        for exp_date in filtered_exp_dates:
-            try:
-                chain = stock.option_chain(exp_date)
-                calls = chain.calls
-                puts = chain.puts
-
-                if calls.empty or puts.empty:
-                    continue
-
-                # Find ATM options - exactly like manual tool
-                call_diffs = (calls['strike'] - current_price).abs()
-                call_idx = call_diffs.idxmin()
-                call_iv = calls.loc[call_idx, 'impliedVolatility']
-
-                put_diffs = (puts['strike'] - current_price).abs()
-                put_idx = put_diffs.idxmin()
-                put_iv = puts.loc[put_idx, 'impliedVolatility']
-
-                # Average the call and put IVs
-                atm_iv_value = (call_iv + put_iv) / 2.0
-                atm_iv[exp_date] = atm_iv_value
-                logger.info(f"Expiration {exp_date}: ATM IV = {atm_iv_value:.4f}")
-            except Exception as e:
-                logger.warning(f"Error processing option chain for {exp_date}: {e}")
-
-        if not atm_iv:
-            logger.error(f"Could not determine ATM IV for any expiration dates for {symbol}")
-            return None
-
-        # Calculate days to expiry for each date
-        today = datetime.datetime.today().date()
-        dtes = []
-        ivs = []
-        for exp_date, iv in atm_iv.items():
-            exp_date_obj = datetime.datetime.strptime(exp_date, "%Y-%m-%d").date()
-            days_to_expiry = (exp_date_obj - today).days
-            dtes.append(days_to_expiry)
-            ivs.append(iv)
-
-        # Build term structure model
-        if len(dtes) < 2:
-            logger.error(f"Not enough IV data points for term structure for {symbol}")
-            return None
-
-        term_spline = build_term_structure(dtes, ivs)
-
-        # Calculate term structure slope (0-45 days) - EXACTLY LIKE MANUAL TOOL
-        min_dte = min(dtes)
-        ts_slope_0_45 = (term_spline(45) - term_spline(min_dte)) / (45 - min_dte)
-        logger.info(f"{symbol} term structure slope (0-45): {ts_slope_0_45:.6f}")
-
-        # Calculate 30-day RV using Yang-Zhang estimator - EXACTLY LIKE MANUAL TOOL
-        rv30 = float(yang_zhang(price_history))
-        logger.info(f"{symbol} 30-day RV: {rv30:.4f}")
-
-        # Calculate IV/RV ratio - EXACTLY LIKE MANUAL TOOL
-        iv30 = float(term_spline(30))
-        logger.info(f"{symbol} 30-day IV: {iv30:.4f}")
-        iv30_rv30 = iv30 / rv30 if rv30 > 0 else 0
-        logger.info(f"{symbol} IV30/RV30 ratio: {iv30_rv30:.2f}")
-
-        # Check if metrics meet criteria - EXACTLY LIKE MANUAL TOOL
-        avg_volume_check = avg_volume >= min_avg_volume
-        iv30_rv30_check = iv30_rv30 >= min_iv30_rv30_ratio
-        ts_slope_check = ts_slope_0_45 <= max_term_structure_slope
-
-        logger.info(f"Volume check ({avg_volume:.0f} >= {min_avg_volume}): {'PASS' if avg_volume_check else 'FAIL'}")
-        logger.info(f"IV/RV check ({iv30_rv30:.2f} >= {min_iv30_rv30_ratio}): {'PASS' if iv30_rv30_check else 'FAIL'}")
-        logger.info(
-            f"Term structure check ({ts_slope_0_45:.6f} <= {max_term_structure_slope}): {'PASS' if ts_slope_check else 'FAIL'}")
-
-        all_criteria_met = avg_volume_check and iv30_rv30_check and ts_slope_check
-        logger.info(f"Overall result: {'PASS' if all_criteria_met else 'FAIL'}")
-
-        # Return results
-        results = {
-            'symbol': symbol,
-            'avg_volume': float(avg_volume),
-            'avg_volume_pass': bool(avg_volume_check),
-            'iv30_rv30': float(iv30_rv30),
-            'iv30_rv30_pass': bool(iv30_rv30_check),
-            'ts_slope_0_45': float(ts_slope_0_45),
-            'ts_slope_pass': bool(ts_slope_check),
-            'all_criteria_met': bool(all_criteria_met)
-        }
-
-        return results
-
-    except Exception as e:
-        logger.error(f"Error analyzing metrics for {symbol}: {e}")
-        return None
 
 def pre_screen_earnings_symbols():
     """
-    Perform early pre-screening of earnings symbols to accommodate API rate limits
-    This function runs earlier in the day to find potential candidates
+    Perform early pre-screening of earnings symbols using IBKR instead of yfinance.
+    This function runs earlier in the day to find potential candidates.
     """
     try:
-        logger.info("Starting early pre-screening of earnings symbols")
+        logger.info("Starting early pre-screening of earnings symbols using IBKR")
 
         # Get today's date and next trading day
         eastern = pytz.timezone('US/Eastern')
@@ -1106,16 +955,23 @@ def pre_screen_earnings_symbols():
             }, f, indent=2)
 
         # If we have a reasonable number of symbols, start screening them
-        if len(all_symbols) > 0:
-            # Pre-screen symbols
-            pre_screened_results = {}
-            for symbol in all_symbols:
-                logger.info(f"Pre-screening {symbol}...")
-                metrics = analyze_stock_metrics(symbol)
-                if metrics:
-                    pre_screened_results[symbol] = metrics
-                    logger.info(
-                        f"Pre-screening complete for {symbol}: {'PASSED' if metrics.get('all_criteria_met', False) else 'FAILED'}")
+        if not all_symbols:
+            logger.info("No earnings announcements found for pre-screening")
+            return {}
+
+        # Connect to IBKR once for all symbols
+        ib = connect_to_ibkr()
+        if not ib or not ib.isConnected():
+            logger.error("Failed to connect to IBKR for pre-screening")
+            return {}
+
+        try:
+            # Create a batch processor using our IBKR connection
+            from ibkr_data_collector import get_batch_processor
+            process_batch = get_batch_processor(ib, batch_size=5)
+
+            # Process all symbols in batches
+            pre_screened_results = process_batch(all_symbols)
 
             # Save pre-screening results
             with open('pre_screened_symbols.json', 'w') as f:
@@ -1143,9 +999,12 @@ def pre_screen_earnings_symbols():
             logger.info(f"Pre-screening complete. {len(passed_symbols)} of {len(all_symbols)} symbols passed criteria.")
 
             return pre_screened_results
-        else:
-            logger.info("No earnings announcements found for pre-screening")
-            return {}
+
+        finally:
+            # Disconnect from IBKR when done
+            if ib and ib.isConnected():
+                ib.disconnect()
+                logger.info("Disconnected from IBKR after pre-screening")
 
     except Exception as e:
         logger.error(f"Error during pre-screening: {e}")
